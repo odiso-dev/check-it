@@ -1,0 +1,63 @@
+/* FONTS */
+/* Unbounded font */
+@font-face {
+    font-family: 'Unbounded';
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 100 800;
+    src: url(../assets/font/Unbounded-VariableFont.ttf) format('woff2');
+}
+
+/* Raleway */
+@font-face {
+    font-family: 'Raleway';
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 100 800;
+    src: url(../assets/font/Raleway-VariableFont.ttf) format('woff2');
+}
+
+:root {
+    /* COLORS */
+    --primary_dark: #2C004D;
+    --primary_normal: #7600CC;
+    --primary_light: #B34DFF;
+    --primary_lighter: #E9CCFF;
+
+    --secondary_dark: #24331A;
+    --secondary_normal: #618844;
+    --secondary_light: #A1C388;
+    --secondary_lighter: #E4EEDD;
+
+    --neutro_dark: #262626;
+    --neutro_normal: #666666;
+    --neutro_light: #A6A6A6;
+    --neutro_lighter: #E6E6E6;
+
+    --accent_dark: #3F330E;
+    --accent_normal: #A88924;
+    --accent_light: #DFC46C;
+    --accent_lighter: #F6EED5;
+
+    --pure_white: #FFFFFF;
+
+    --error: #E01300;
+
+    --warning: #A46A19;
+
+    /* SIZES & BASIC SPACES*/
+    --xxxs: 2px;
+    --xxs: 4px;
+    --xs: 8px;
+    --s: 16px;
+    --m: 24px;
+    --l: 32px;
+    --xl: 40px;
+    --xxl: 48px;
+    --xxxl: 56px;
+    --xxxxl: 64px;
+
+    /* TYPOGRAPHY */
+    --accent: 'Unbounded';
+    --common: 'Raleway';
+}
