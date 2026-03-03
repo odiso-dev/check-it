@@ -45,6 +45,9 @@
 
     --warning: #A46A19;
 
+    /* COLOR SCHEME */
+    color-scheme: light dark;
+
     /* SIZES & BASIC SPACES*/
     --xxxs: 2px;
     --xxs: 4px;
@@ -56,8 +59,16 @@
     --xxl: 48px;
     --xxxl: 56px;
     --xxxxl: 64px;
+    --max_width: 1200px;
 
     /* TYPOGRAPHY */
     --accent: 'Unbounded';
     --common: 'Raleway';
+}
+
+body {
+    background-color: var(--secondary_lighter);
+    max-width: var(--max_width);
+    margin: 0 auto;
+    height: 100vh;
 }
