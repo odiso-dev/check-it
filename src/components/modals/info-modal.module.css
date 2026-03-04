@@ -1,0 +1,18 @@
+.info_modal {
+    width: 328px;
+    height: 600px;
+    background-color: var(--secondary_lighter);
+    border: var(--xxxs) solid var(--primary_dark);
+    border-radius: var(--xxs);
+    display: grid;
+    place-items: center;
+    place-self: center;
+    padding: var(--s);
+    position: relative;
+}
+
+.close_modal {
+    position: absolute;
+    top: var(--s);
+    right: var(--s);
+}

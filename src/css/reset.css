@@ -32,7 +32,6 @@ s,
 samp,
 small,
 strike,
-strong,
 sub,
 sup,
 tt,
@@ -137,4 +136,10 @@ a {
 button {
     all: unset;
     cursor: pointer;
+}
+
+*,
+::before*,
+::after* {
+    box-sizing: border-box;
 }

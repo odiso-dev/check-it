@@ -1,8 +1,13 @@
 import React from "react";
-import {Header} from '@/components/header'
+import {Layout} from '@/components/layout/layout'
+import {Header} from '@/components/header/header'
+import {Main} from '@/components/main'
 
 export const Home:React.FC = ()=>{
     return(
-        <Header/>
+        <Layout>
+            <Header/>
+            <Main/>
+        </Layout>
     )
 };

@@ -8,5 +8,5 @@
     justify-content: space-between;
     align-items: center;
     gap: var(--s);
-    box-shadow: 0px 3px 16px 0px var(--neutro_light);
+    box-shadow: 0px 0px var(--xs) 0px var(--neutro_light);
 }
