@@ -1,11 +1,9 @@
 import React from 'react';
 
 export const InfoButton: React.FC = () => {
-  const handleClick = () => {
-    // console.warn('click');
-  };
+  
   return (
-    <button className={'header__info'} onClick={handleClick}>
+    <button className={'header__info'}>
       <svg
         width="32"
         height="32"

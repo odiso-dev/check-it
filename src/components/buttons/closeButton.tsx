@@ -2,13 +2,14 @@ import React from 'react';
 
 interface Props {
   props: string;
-  onClose: ()=>void;
+  modalState: () => void;
 }
 
 export const CloseButton: React.FC<Props> = (props) => {
-  const { classname, onClose } = props;
+  const { classname, modalState } = props;
+  
   return (
-    <button className={classname} onClick={onClose}>
+    <button className={classname} onClick={modalState}>
       <svg
         width="32"
         height="32"

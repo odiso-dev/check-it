@@ -1,0 +1,24 @@
+.layout_modal {
+    width: clamp(200px, 80vw, 320px);
+    height: 600px;
+    border: var(--xxxs) solid var(--primary_dark);
+    border-radius: var(--xxs);
+    display: grid;
+    place-items: center;
+    place-self: center;
+    padding: var(--s);
+    position: relative;
+}
+
+.close_modal {
+    position: absolute;
+    top: var(--s);
+    right: var(--s);
+}
+
+.hidden {
+    display: none;
+}
+.info{
+    background-color: var(--secondary_lighter);
+}

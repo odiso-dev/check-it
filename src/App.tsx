@@ -4,9 +4,7 @@ import {Home} from '@/pages/home'
 export function App():React.FC {
 
   return (
-    <>
-      <Home/>      
-    </>
+      <Home/>   
   )
 };
 export default App;
