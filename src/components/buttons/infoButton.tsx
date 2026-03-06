@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const InfoButton: React.FC = () => {
-  
   return (
     <button className={'header__info'}>
       <svg

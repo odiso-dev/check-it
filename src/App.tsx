@@ -1,10 +1,14 @@
 import React from 'react';
-import {Home} from '@/pages/home'
+import { LayoutApp } from '@/components/layout/layoutApp';
+import { Header } from '@/components/header/header';
+import { Main } from '@/components/main';
 
-export function App():React.FC {
-
+export function App(): React.FC {
   return (
-      <Home/>   
-  )
-};
+    <LayoutApp>
+      <Header />
+      <Main />
+    </LayoutApp>
+  );
+}
 export default App;

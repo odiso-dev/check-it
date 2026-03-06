@@ -4,10 +4,10 @@ import classes from './info-modal.module.css';
 export const InfoModal: React.FC = () => {
   return (
     <div className={classes.infoModal}>
-      <div className="infoModalTitle">
+      <div className="info_modal__title">
         <h1>Welcome</h1>
       </div>
-      <div className="infoModalContent">
+      <div className="info_modal__content">
         <p>
           <strong>CheckIt</strong> allows you to keep your shopping list well
           organized so you don't forget anything.
