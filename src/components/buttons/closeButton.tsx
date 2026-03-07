@@ -1,15 +1,17 @@
 import React from 'react';
+import { ModalContext } from '@/context/modalContext';
 
 interface Props {
   props: string;
-  modalState: () => void;
 }
 
 export const CloseButton: React.FC<Props> = (props) => {
-  const { classname, modalState } = props;
-  
+  const { classname } = props;
+  // Context
+  const { isModalOpen, closeModal } = React.useContext(ModalContext);
+
   return (
-    <button className={classname} onClick={modalState}>
+    <button className={classname} onClick={isModalOpen ? closeModal : null}>
       <svg
         width="32"
         height="32"

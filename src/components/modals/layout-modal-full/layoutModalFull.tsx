@@ -1,28 +1,25 @@
 import React from 'react';
 import classes from './layoutModalFull.module.css';
 import { CloseButton } from '@/components/buttons/closeButton';
+import { ModalContext } from '@/context/modalContext';
 
 // type of modal children rendering
 type ModalVariant = 'info' | 'addItems';
 
-interface Props{
+interface Props {
   children: React.ReactNode;
   variant?: ModalVariant;
 }
 export const LayoutModalFull: React.FC<Props> = (props) => {
   const { children, variant } = props;
-  const [isVisible, setIsVisible] = React.useState(true);
-  
-  const handleVisibility = () => setIsVisible(false);
-  
+  // Context
+  const { isModalOpen } = React.useContext(ModalContext);
+
   return (
     <div
-      className={`${classes.layoutModal} ${variant ? classes[variant] : ''} ${!isVisible ? classes.hidden : ''} `}
+      className={`${classes.layoutModal} ${variant ? classes[variant] : ''} ${!isModalOpen ? classes.hidden : ''} `}
     >
-      <CloseButton
-        classname={classes.closeModal}
-        modalState={handleVisibility}
-      />
+      <CloseButton classname={classes.closeModal} />
       {children}
     </div>
   );

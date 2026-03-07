@@ -1,8 +1,12 @@
 import React from 'react';
+import {ModalContext} from '@/context/modalContext'
 
 export const InfoButton: React.FC = () => {
+  // Context
+  const {isModalOpen, openModal} = React.useContext(ModalContext);
+
   return (
-    <button className={'header__info'}>
+    <button className={'header__info'} onClick={!isModalOpen ? openModal : null}>
       <svg
         width="32"
         height="32"
