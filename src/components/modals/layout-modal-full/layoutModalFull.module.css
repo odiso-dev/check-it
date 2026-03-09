@@ -1,7 +1,7 @@
 .layout_modal {
     width: clamp(200px, 80vw, 320px);
     height: 600px;
-    border: var(--xxxs) solid var(--primary_dark);
+    border: var(--xxxs) solid var(--color_primary_dark);
     border-radius: var(--xxs);
     display: grid;
     place-items: center;
@@ -19,6 +19,12 @@
 .hidden {
     display: none;
 }
-.info{
-    background-color: var(--secondary_lighter);
+
+.info {
+    background-color: var(--bg_secondary_lighter);
+}
+
+:root[data-theme="dark"] .info {
+    --bg_secondary_lighter: var(--primary_dark);
+    --color_primary_dark: var(--pure_white);
 }
