@@ -11,9 +11,6 @@ export const ModalProvider: React.FC<ModalContextType> = (props) => {
     return true;
   });
 
-  console.log(localStorage);
-  console.warn(isModalOpen);
-
   React.useEffect(() => {
     // Add attr modal state in html
     document.documentElement.setAttribute('data-modal', String(isModalOpen));

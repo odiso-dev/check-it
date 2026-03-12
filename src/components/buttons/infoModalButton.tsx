@@ -9,6 +9,10 @@ export const InfoButton: React.FC = () => {
     <button
       className={'header__info'}
       onClick={!isModalOpen ? openModal : null}
+      aria-label="Show info modal"
+      aria-haspopup="dialog"
+      aria-expanded={isModalOpen}
+      aria-describedby="info_modal"
     >
       <svg
         width="32"

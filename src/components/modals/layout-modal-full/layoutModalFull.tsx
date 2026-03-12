@@ -12,12 +12,11 @@ interface Props {
 }
 export const LayoutModalFull: React.FC<Props> = (props) => {
   const { children, variant } = props;
-  // Context
-  // const { isModalOpen } = React.useContext(ModalContext);
 
   return (
     <div
       className={`${classes.layoutModal} ${variant ? classes[variant] : ''} `}
+      id="info_modal"
     >
       <CloseButton classname={classes.closeModal} />
       {children}

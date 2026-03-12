@@ -8,10 +8,14 @@ interface Props {
 export const CloseButton: React.FC<Props> = (props) => {
   const { classname } = props;
   // Context
-  const { isModalOpen, closeModal } = React.useContext(ModalContext); 
+  const { isModalOpen, closeModal } = React.useContext(ModalContext);
 
   return (
-    <button className={classname} onClick={isModalOpen ? closeModal : null}>
+    <button
+      className={classname}
+      onClick={isModalOpen ? closeModal : null}
+      aria-label="Close modal"
+    >
       <svg
         width="32"
         height="32"

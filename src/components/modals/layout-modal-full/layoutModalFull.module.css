@@ -16,10 +16,6 @@
     right: var(--s);
 }
 
-/* .hidden {
-    display: none;
-} */
-
 .info {
     background-color: var(--bg_secondary_lighter);
 }

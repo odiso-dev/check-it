@@ -4,6 +4,7 @@ export const DarkModeButton: React.FC = () => {
   const [colorTheme, setColorTheme] = React.useState(() => {
     return localStorage.getItem('theme') || 'light';
   });
+  const [active, setActive] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     document.documentElement.setAttribute('data-theme', colorTheme);
@@ -12,13 +13,16 @@ export const DarkModeButton: React.FC = () => {
   }, [colorTheme]);
 
   const handleClick = () => {
-    setColorTheme((prevTheme)=>prevTheme === 'light' ? 'dark' : 'light');
+    setColorTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    setActive((prevState) => !prevState);
   };
 
   return (
     <button
       aria-label={`Switch ${colorTheme} color theme`}
+      role="switch"
       className="header__dark_mode"
+      aria-checked={active}
       onClick={handleClick}
     >
       <svg
