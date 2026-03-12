@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './layoutModalFull.module.css';
-import { CloseButton } from '@/components/buttons/closeButton';
+import classes from './layout-modal.module.css';
+import { CloseButton } from '@/components/buttons/close';
 // import { ModalContext } from '@/context/modalContext';
 
 // type of modal children rendering

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModalContext } from './modalContext';
+import { ModalContext } from './modal-context';
 
 // Create context provider
 export const ModalProvider: React.FC<ModalContextType> = (props) => {

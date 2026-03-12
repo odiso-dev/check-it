@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModalContext } from '@/context/modalContext';
+import { ModalContext } from '@/context/modal-context';
 
 export const InfoButton: React.FC = () => {
   // Context

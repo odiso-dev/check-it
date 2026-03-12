@@ -1,8 +1,8 @@
 import React from 'react';
-import { InfoModal } from '@/components/modals/infoModal';
-import { LayoutModalFull } from '@/components/modals/layout-modal-full/layoutModalFull';
+import { InfoModal } from '@/pods/modals/info-modal';
+import { LayoutModalFull } from '@/layouts/layout-modal/layout-modal';
 import classes from './main.module.css';
-import { ModalContext } from '@/context/modalContext';
+import { ModalContext } from '@/context/modal-context';
 
 export const Main: React.FC = () => {
   const { isModalOpen } = React.useContext(ModalContext);
