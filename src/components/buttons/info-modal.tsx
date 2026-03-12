@@ -12,7 +12,6 @@ export const InfoButton: React.FC = () => {
       aria-label="Show info modal"
       aria-haspopup="dialog"
       aria-expanded={isModalOpen}
-      aria-describedby="info_modal"
     >
       <svg
         width="32"

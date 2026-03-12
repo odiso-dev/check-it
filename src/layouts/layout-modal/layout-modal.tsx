@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './layout-modal.module.css';
 import { CloseButton } from '@/components/buttons/close';
-// import { ModalContext } from '@/context/modalContext';
 
 // type of modal children rendering
 type ModalVariant = 'info' | 'addItems';
@@ -16,7 +15,6 @@ export const LayoutModalFull: React.FC<Props> = (props) => {
   return (
     <div
       className={`${classes.layoutModal} ${variant ? classes[variant] : ''} `}
-      id="info_modal"
     >
       <CloseButton classname={classes.closeModal} />
       {children}

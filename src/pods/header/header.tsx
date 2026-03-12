@@ -1,7 +1,7 @@
 import React from 'react';
-import { InfoButton } from '../../components/buttons/info-modal';
+import { InfoButton } from '@/components/buttons/info-modal';
 import { Logo } from '@/components/logo';
-import { DarkModeButton } from '../../components/buttons/dark-mode';
+import { DarkModeButton } from '@/components/buttons/dark-mode';
 import classes from './header.module.css';
 
 export const Header: React.FC = () => {

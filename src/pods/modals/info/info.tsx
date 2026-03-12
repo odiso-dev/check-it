@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './info-modal.module.css';
+import classes from './info.module.css';
 
 export const InfoModal: React.FC = () => {
   return (

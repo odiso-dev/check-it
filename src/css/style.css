@@ -50,13 +50,6 @@
     --bg_secondary_lighter: var(--secondary_lighter);
     --bg_pure_white: var(--pure_white);
 
-    /* COLOR SCHEME */
-    color-scheme: light dark;
-    color: var(--color_primary_dark);
-    background-color: var(--bg_secondary_lighter);
-    /* color: light-dark(var(--primary_dark), var(--pure_white));
-    background-color: light-dark(var(--pure_white), var(--primary_dark)); */
-
     /* SIZES & BASIC SPACES*/
     --xxxs: 2px;
     --xxs: 4px;
@@ -73,6 +66,19 @@
     /* TYPOGRAPHY */
     --accent: 'Unbounded';
     --common: 'Raleway';
+
+    /* FONT WEIGHTS */
+    --bold: 700;
+    --semibold: 500;
+    --regular: 400;
+
+    /* DEFAULT VALUES */
+    font-family: var(--common);
+
+    /* Color scheme */
+    color-scheme: light dark;
+    color: var(--color_primary_dark);
+    background-color: var(--bg_secondary_lighter);
 }
 
 /* DARK THEME */
@@ -93,7 +99,6 @@ body {
     margin: 0 auto;
     height: 100vh;
     background-color: var(--bg_pure_white);
-
 }
 
 

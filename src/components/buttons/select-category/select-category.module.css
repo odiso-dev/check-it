@@ -1,0 +1,11 @@
+.select_category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--s);
+    padding: var(--xs);
+    text-align: center;
+    font-weight: var(--bold);
+    border-radius: var(--xs);
+    border: var(--xxs) solid var(--color_primary_dark);
+}
