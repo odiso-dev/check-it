@@ -5,4 +5,5 @@
     place-content: center;
     gap: var(--s);
     place-items: center;
+    color: var(--color_primary_dark);
 }

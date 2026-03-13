@@ -8,12 +8,7 @@
     place-self: center;
     padding: var(--s);
     position: relative;
-}
-
-.close_modal {
-    position: absolute;
-    top: var(--s);
-    right: var(--s);
+    
 }
 
 .info {

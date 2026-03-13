@@ -1,8 +1,10 @@
 .btn_add {
+    width: auto;
     padding: var(--s);
     display: block;
     text-align: center;
     font-weight: var(--bold);
-    background-color: var(--secondary_light);
+    background-color: var(--bg_secondary_light);
     border-radius: var(--xs);
+    color: var(--primary_dark);
 }

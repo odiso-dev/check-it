@@ -1,0 +1,14 @@
+
+.modal_category {
+    padding: var(--s);
+    border: var(--xxs) solid var(--color_primary_dark);
+    border-radius: var(--xs) var(--xs) 0 0;
+
+    & .modal_category_title {
+        margin: var(--s) 0;
+    }
+
+    & li {
+        margin: var(--s) 0;
+    }
+}

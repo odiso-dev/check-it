@@ -49,6 +49,7 @@
     --color_primary_dark: var(--primary_dark);
     --bg_secondary_lighter: var(--secondary_lighter);
     --bg_pure_white: var(--pure_white);
+    --bg_secondary_light: var(--secondary_light);
 
     /* SIZES & BASIC SPACES*/
     --xxxs: 2px;
@@ -82,13 +83,12 @@
 }
 
 /* DARK THEME */
-
 :root[data-theme="dark"] {
     --color_primary_dark: var(--pure_white);
     --bg_secondary_lighter: var(--primary_dark);
     --bg_pure_white: var(--primary_dark);
+    --bg_secondary_light: var(--primary_lighter)
 }
-
 
 html {
     scroll-behavior: smooth;
@@ -97,7 +97,6 @@ html {
 body {
     max-width: var(--max_width);
     margin: 0 auto;
-    height: 100vh;
     background-color: var(--bg_pure_white);
 }
 

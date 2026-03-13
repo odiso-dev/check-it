@@ -1,18 +1,14 @@
 import React from 'react';
 import { ModalContext } from '@/context/modal-context';
+import classes from './close.module.css';
 
-interface Props {
-  props: string;
-}
-
-export const CloseButton: React.FC<Props> = (props) => {
-  const { classname } = props;
+export const CloseButton: React.FC = () => {
   // Context
   const { isModalOpen, closeModal } = React.useContext(ModalContext);
 
   return (
     <button
-      className={classname}
+      className={classes.close}
       onClick={isModalOpen ? closeModal : null}
       aria-label="Close modal"
     >

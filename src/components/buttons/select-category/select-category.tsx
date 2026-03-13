@@ -3,8 +3,15 @@ import classes from './select-category.module.css';
 
 export const SelectCategory: React.FC = () => {
   return (
-    <button className={classes.selectCategory} type="button">
-      <span>Select category</span>
+    <button
+      className={classes.selectCategory}
+      type="button"
+      role="combobox"
+      aria-haspopup="listbox"
+      aria-expanded="false"
+      aria-controls="category_list"
+    >
+      <span id="select_item">Select category</span>
       <svg
         width="32"
         height="32"
