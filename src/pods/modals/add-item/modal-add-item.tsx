@@ -2,7 +2,6 @@ import React from 'react';
 import { InputItem } from '@/components/inputs/input-item-product-category/input-item';
 import { ButtonAddItem } from '@/components/buttons/button-add-item/button-add-item';
 import { SelectCategory } from '@/components/buttons/button-select-category/button-select-category';
-import { ModalCategory } from '@/pods/modals/category/modal-category';
 import classes from './modal-add-item.module.css';
 
 export const AddItemModal: React.FC = () => {
@@ -12,7 +11,6 @@ export const AddItemModal: React.FC = () => {
       <ButtonAddItem />
       <hr></hr>
       <InputItem type="product" placeholder="product" required />
-      <ModalCategory />
       <SelectCategory />
       <ButtonAddItem />
     </form>

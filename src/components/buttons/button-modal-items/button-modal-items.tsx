@@ -8,6 +8,7 @@ export const ButtonOpenModalItems: React.FC = () => {
 
   const handleClick = () => {
     if (!isModalOpen) {
+      setModalType('');
       setModalType('addItems');
       openModal();
     }

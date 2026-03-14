@@ -5,9 +5,11 @@ import classes from './main.module.css';
 import { ModalContext } from '@/context/modal-context';
 import { AddItemModal } from '@/pods/modals/add-item/modal-add-item';
 import { ButtonOpenModalItems } from '@/components/buttons/button-modal-items/button-modal-items';
+import { ModalCategory } from '@/pods/modals/category/modal-category';
 
 export const Main: React.FC = () => {
   const { isModalOpen, modalType } = React.useContext(ModalContext);
+  console.warn(modalType);
 
   const currentVariant = 'info';
 
@@ -18,9 +20,8 @@ export const Main: React.FC = () => {
           {modalType === 'info' ? <InfoModal /> : <AddItemModal />}
         </LayoutModalFull>
       )}
-      {!isModalOpen && modalType !== 'addItems' ? (
-        <ButtonOpenModalItems />
-      ) : null}
+      {!isModalOpen ? <ButtonOpenModalItems /> : null}
+      {modalType === 'category' ? <ModalCategory /> : null}
     </main>
   );
 };

@@ -1,7 +1,14 @@
 import React from 'react';
 import classes from './button-select-category.module.css';
+import { ModalContext } from '@/context/modal-context';
 
 export const SelectCategory: React.FC = () => {
+  const { setModalType } = React.useContext(ModalContext);
+
+  const handleClick = () => {
+    setModalType('');
+    setModalType('category');
+  };
   return (
     <button
       className={classes.selectCategory}
@@ -10,6 +17,7 @@ export const SelectCategory: React.FC = () => {
       aria-haspopup="listbox"
       aria-expanded="false"
       aria-controls="category_list"
+      onClick={handleClick}
     >
       <span id="select_item">Select category</span>
       <svg

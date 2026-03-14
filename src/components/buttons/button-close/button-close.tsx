@@ -4,13 +4,14 @@ import classes from './button-close.module.css';
 
 export const CloseButton: React.FC = () => {
   // Context
-  const { isModalOpen, closeModal, setModalType } =
+  const { isModalOpen, closeModal, modalType, setModalType } =
     React.useContext(ModalContext);
 
   const handleClick = () => {
     if (isModalOpen) {
+      console.warn('current modal', modalType);
       closeModal();
-      setModalType('');
+      setModalType(modalType);
     }
   };
 
