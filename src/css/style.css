@@ -95,11 +95,16 @@ html {
 }
 
 body {
-    max-width: var(--max_width);
+    width: clamp(200px, 100%, 1200px);
+    height: 100dvh;
     margin: 0 auto;
     background-color: var(--bg_pure_white);
+    overflow-x: hidden;
 }
 
+#root {
+    height: 100%;
+}
 
 h1,
 h2,

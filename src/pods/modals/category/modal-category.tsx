@@ -1,28 +1,45 @@
 import React from 'react';
 import classes from './modal-category.module.css';
+import { CloseButton } from '@/components/buttons/button-close/button-close';
 
 export const ModalCategory: React.FC = () => {
   return (
-    <div
-      className={classes.modalCategory}
-      role="listbox"
-      tabIndex="-1"
-      aria-labelledby="select_item"
-      id="category_list"
-    >
-      <h2 className={classes.modalCategoryTitle}>Current product name</h2>
-      <hr />
-      <ul>
-        <li role="option" aria-selected="false" id="">
-          Caterogy 1
-        </li>
-        <li role="option" aria-selected="false" id="">
-          Caterogy 1
-        </li>
-        <li role="option" aria-selected="false" id="">
-          Caterogy 1
-        </li>
-      </ul>
-    </div>
+    <dialog role="dialog" className={classes.modalCategory}>
+      <CloseButton />
+      <div
+        className={classes.wrapperModalCategory}
+        role="listbox"
+        tabIndex="-1"
+        aria-labelledby="select_item"
+        id="category_list"
+      >
+        <div className={classes.modalCategoryTitle}>
+          <h2>Current product name</h2>
+          <hr />
+        </div>
+        <div className={classes.modalCategoryContent}>
+          <ul>
+            <li role="option" aria-selected="false" id="">
+              <button>Caterogy 1</button>
+            </li>
+            <li role="option" aria-selected="false" id="">
+              <button>Caterogy 1</button>
+            </li>
+            <li role="option" aria-selected="false" id="">
+              <button>Caterogy 1</button>
+            </li>
+            <li role="option" aria-selected="false" id="">
+              <button>Caterogy 1</button>
+            </li>
+            <li role="option" aria-selected="false" id="">
+              <button>Caterogy 1</button>
+            </li>
+            <li role="option" aria-selected="false" id="">
+              <button>Caterogy 1</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </dialog>
   );
 };

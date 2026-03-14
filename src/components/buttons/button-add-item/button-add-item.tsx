@@ -3,15 +3,7 @@ import { ModalContext } from '@/context/modal-context';
 import classes from './button-add-item.module.css';
 
 export const ButtonAddItem: React.FC = () => {
-  const { isModalOpen, openModal, setModalType } =
-    React.useContext(ModalContext);
-
-  const handleClick = () => {
-    if (!isModalOpen) {
-      setModalType('addItems');
-      openModal();
-    }
-  };
+  const { isModalOpen } = React.useContext(ModalContext);
 
   return (
     <button
@@ -20,7 +12,6 @@ export const ButtonAddItem: React.FC = () => {
       aria-haspopup="dialog"
       aria-expanded={isModalOpen}
       aria-controls="add_item_modal"
-      onClick={handleClick}
     >
       Add item
     </button>

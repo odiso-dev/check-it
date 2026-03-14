@@ -1,14 +1,22 @@
-
 .modal_category {
+    background-color: var(--bg_pure_white);
     padding: var(--s);
     border: var(--xxs) solid var(--color_primary_dark);
     border-radius: var(--xs) var(--xs) 0 0;
+    height: 300px;
+    overflow-y: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 
-    & .modal_category_title {
-        margin: var(--s) 0;
-    }
+.modal_category_title {
+    margin: var(--s) 0;
+}
+
+.modal_category_content {
 
     & li {
-        margin: var(--s) 0;
+        margin: var(--m) 0;
     }
 }

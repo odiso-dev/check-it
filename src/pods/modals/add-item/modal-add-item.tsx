@@ -12,8 +12,8 @@ export const AddItemModal: React.FC = () => {
       <ButtonAddItem />
       <hr></hr>
       <InputItem type="product" placeholder="product" required />
-      <SelectCategory />
       <ModalCategory />
+      <SelectCategory />
       <ButtonAddItem />
     </form>
   );

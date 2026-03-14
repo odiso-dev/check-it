@@ -139,11 +139,16 @@ button {
 }
 
 *,
-::before*,
-::after* {
-    box-sizing: border-box;
+::before,
+::after {
+    box-sizing: border-box !important;
 }
 
 input {
     font-family: inherit;
+}
+
+dialog {
+    color: inherit;
+    display: initial;
 }

@@ -1,6 +1,6 @@
 .layout_modal {
-    width: clamp(200px, 80vw, 320px);
-    height: clamp(600px, 100%, 100%);
+    width: 328px;
+    height: 100%;
     border: var(--xxxs) solid var(--color_primary_dark);
     border-radius: var(--xxs);
     display: grid;
