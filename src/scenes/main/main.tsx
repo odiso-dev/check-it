@@ -7,7 +7,7 @@ import { AddItemModal } from '@/pods/modals/add-item/add-item';
 import { ButtonAddItem } from '@/components/buttons/btn-add-item/btn-add-item';
 
 export const Main: React.FC = () => {
-  const { isModalOpen } = React.useContext(ModalContext);
+  const { isModalOpen, modalType } = React.useContext(ModalContext);
 
   const currentVariant = 'info';
 
@@ -15,10 +15,10 @@ export const Main: React.FC = () => {
     <main className={classes.main}>
       {isModalOpen && (
         <LayoutModalFull variant={currentVariant}>
-          {currentVariant === 'info' ? <InfoModal /> : <AddItemModal />}
+          {modalType === 'info' ? <InfoModal /> : <AddItemModal />}
         </LayoutModalFull>
       )}
-      <ButtonAddItem />
+      {!isModalOpen && modalType !== 'addItems' ? <ButtonAddItem /> : null}
     </main>
   );
 };

@@ -10,6 +10,7 @@ export const ModalProvider: React.FC<ModalContextType> = (props) => {
     if (saved === 'false') return false;
     return true;
   });
+  const [modalType, setModalType] = React.useState('info');
 
   React.useEffect(() => {
     // Add attr modal state in html
@@ -22,7 +23,9 @@ export const ModalProvider: React.FC<ModalContextType> = (props) => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <ModalContext.Provider value={{ isModalOpen, openModal, closeModal }}>
+    <ModalContext.Provider
+      value={{ isModalOpen, openModal, closeModal, modalType, setModalType }}
+    >
       {children}
     </ModalContext.Provider>
   );

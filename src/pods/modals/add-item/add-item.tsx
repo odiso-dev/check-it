@@ -5,6 +5,7 @@ import { SelectCategory } from '@/components/buttons/select-category/select-cate
 import classes from './add-item.module.css';
 
 export const AddItemModal: React.FC = () => {
+
   return (
     <form className={classes.addItemModal} id="add_item_modal">
       <InputItem type="category" placeholder="category" required />
@@ -12,7 +13,8 @@ export const AddItemModal: React.FC = () => {
       <hr></hr>
       <InputItem type="product" placeholder="product" required />
       <SelectCategory />
-      <ButtonAddItem />
+       <ButtonAddItem />
+      
     </form>
   );
 };

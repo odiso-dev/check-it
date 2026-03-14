@@ -3,12 +3,20 @@ import { ModalContext } from '@/context/modal-context';
 
 export const InfoButton: React.FC = () => {
   // Context
-  const { isModalOpen, openModal } = React.useContext(ModalContext);
+  const { isModalOpen, openModal, setModalType } =
+    React.useContext(ModalContext);
+
+  const handleClick = () => {
+    if (!isModalOpen) {
+      openModal();
+      setModalType('info');
+    }
+  };
 
   return (
     <button
       className={'header__info'}
-      onClick={!isModalOpen ? openModal : null}
+      onClick={handleClick}
       aria-label="Show info modal"
       aria-haspopup="dialog"
       aria-expanded={isModalOpen}

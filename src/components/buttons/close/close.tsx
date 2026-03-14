@@ -4,12 +4,20 @@ import classes from './close.module.css';
 
 export const CloseButton: React.FC = () => {
   // Context
-  const { isModalOpen, closeModal } = React.useContext(ModalContext);
+  const { isModalOpen, closeModal, setModalType } =
+    React.useContext(ModalContext);
+
+  const handleClick = () => {
+    if (isModalOpen) {
+      closeModal();
+      setModalType('');
+    }
+  };
 
   return (
     <button
       className={classes.close}
-      onClick={isModalOpen ? closeModal : null}
+      onClick={handleClick}
       aria-label="Close modal"
     >
       <svg
