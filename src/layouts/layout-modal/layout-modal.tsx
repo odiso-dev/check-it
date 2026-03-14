@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './layout-modal.module.css';
-import { CloseButton } from '@/components/buttons/close/close';
+import { CloseButton } from '@/components/buttons/button-close/button-close';
 
 // type of modal children rendering
 type ModalVariant = 'info' | 'addItems';

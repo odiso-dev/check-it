@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './modal-category.module.css';
 
 export const ModalCategory: React.FC = () => {
   return (

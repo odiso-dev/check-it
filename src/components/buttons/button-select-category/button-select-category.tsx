@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './select-category.module.css';
+import classes from './button-select-category.module.css';
 
 export const SelectCategory: React.FC = () => {
   return (

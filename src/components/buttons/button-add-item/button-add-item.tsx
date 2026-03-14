@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './btn-add-item.module.css';
 import { ModalContext } from '@/context/modal-context';
+import classes from './button-add-item.module.css';
 
 export const ButtonAddItem: React.FC = () => {
   const { isModalOpen, openModal, setModalType } =

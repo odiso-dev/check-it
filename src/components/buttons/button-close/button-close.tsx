@@ -1,6 +1,6 @@
 import React from 'react';
 import { ModalContext } from '@/context/modal-context';
-import classes from './close.module.css';
+import classes from './button-close.module.css';
 
 export const CloseButton: React.FC = () => {
   // Context
