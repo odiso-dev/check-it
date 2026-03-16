@@ -1,5 +1,5 @@
 label {
-    display: block;
+    display: inline-block;
     font-weight: var(--bold);
 
     &::first-letter {

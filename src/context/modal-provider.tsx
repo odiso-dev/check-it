@@ -13,11 +13,13 @@ export const ModalProvider: React.FC<ModalContextType> = (props) => {
   const [modalType, setModalType] = React.useState('info');
 
   React.useEffect(() => {
-    // Add attr modal state in html
+    // Add modal state attr in html
     document.documentElement.setAttribute('data-modal', String(isModalOpen));
+    // Add modal type attr in html
+    document.documentElement.setAttribute('data-modal-type', modalType);
     // Store modal state in localStorage
     localStorage.setItem('modalOpened', isModalOpen ? 'true' : 'false');
-  }, [isModalOpen]);
+  }, [isModalOpen, modalType]);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
