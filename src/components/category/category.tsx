@@ -1,14 +1,10 @@
 import React from 'react';
 import classes from './category.module.css';
+import {Product} from '@/components/product/product'
 
-import { InputCheckbox } from '@/components/inputs/input-checbox-product/input-checkbox-product';
 
-interface Props {
-  children: React.PropsWithChildren;
-}
 
-export const Category: React.FC<Props> = (props) => {
-  const { children } = props;
+export const Category: React.FC = () => {
 
   return (
     <details className={classes.category}>
@@ -29,9 +25,8 @@ export const Category: React.FC<Props> = (props) => {
         </svg>
       </summary>
       <div className={classes.categoryContent}>
-        {children}
         <form action="">
-          <InputCheckbox />
+          <Product />
         </form>
       </div>
     </details>

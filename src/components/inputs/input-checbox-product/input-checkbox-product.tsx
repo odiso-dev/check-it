@@ -4,11 +4,12 @@ import classes from './input-checkbox-product.module.css';
 export const InputCheckbox: React.FC = () => {
   return (
     <>
-      <fieldset className={classes.fieldsetProduct}>
-        <input type="checkbox" name="" id="product_checkbox" />
+      <input type="checkbox" name="" id="product_checkbox" />
+
+      <label htmlFor="product_checkbox">
         <svg
-          width="48"
-          height="48"
+          width="32"
+          height="32"
           viewBox="0 0 48 48"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -28,9 +29,8 @@ export const InputCheckbox: React.FC = () => {
             fill="none"
           />
         </svg>
-
-        <label htmlFor="product_checkbox">Product example</label>
-      </fieldset>
+        <span>Product example</span>
+      </label>
     </>
   );
 };
