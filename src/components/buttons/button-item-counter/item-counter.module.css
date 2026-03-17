@@ -8,5 +8,6 @@
 
     & .units {
         font-weight: var(--semibold);
+        font-size: var(--m);
     }
 }

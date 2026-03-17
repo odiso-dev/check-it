@@ -1,0 +1,17 @@
+.fieldset_product {
+    display: flex;
+    align-items: center;
+
+    & input {
+        display: none;
+    }
+
+    & label {
+        cursor: pointer;
+        font-weight: var(--semibold);
+    }
+}
+
+input:checked+label .checked {
+    fill: var(--primary_normal);
+}

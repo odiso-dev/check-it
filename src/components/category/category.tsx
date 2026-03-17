@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './category.module.css';
-import { ItemCounter } from '@/components/buttons/button-item-counter/item-counter';
+
+import { InputCheckbox } from '@/components/inputs/input-checbox-product/input-checkbox-product';
 
 interface Props {
   children: React.PropsWithChildren;
@@ -30,20 +31,7 @@ export const Category: React.FC<Props> = (props) => {
       <div className={classes.categoryContent}>
         {children}
         <form action="">
-          <fieldset>
-            <input type="radio" name="" id="" />
-            <label htmlFor="">Product example</label>
-
-            <ItemCounter />
-          </fieldset>
-          <fieldset>
-            <input type="radio" name="" id="" />
-            <label htmlFor="">Product example</label>
-          </fieldset>
-          <fieldset>
-            <input type="radio" name="" id="" />
-            <label htmlFor="">Product example</label>
-          </fieldset>
+          <InputCheckbox />
         </form>
       </div>
     </details>

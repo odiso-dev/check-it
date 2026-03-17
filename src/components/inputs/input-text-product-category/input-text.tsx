@@ -1,5 +1,5 @@
 import React from 'react';
-import './input-item.module.css';
+import './input-text.module.css';
 
 type Input = 'category' | 'product';
 
@@ -9,7 +9,7 @@ interface Props {
   required: boolean;
 }
 
-export const InputItem: React.FC<Props> = (props) => {
+export const InputTextItem: React.FC<Props> = (props) => {
   const { type, placeholder, required } = props;
 
   return (
