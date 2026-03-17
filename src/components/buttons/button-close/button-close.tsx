@@ -9,7 +9,6 @@ export const CloseButton: React.FC = () => {
 
   const handleClick = () => {
     if (isModalOpen) {
-      console.warn('current modal', modalType);
       closeModal();
       setModalType(modalType);
     }

@@ -1,0 +1,12 @@
+.wrapper_counter {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding: var(--xs);
+    gap: var(--xs);
+
+    & .units {
+        font-weight: var(--semibold);
+    }
+}

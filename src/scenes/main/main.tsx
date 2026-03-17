@@ -10,13 +10,12 @@ import { Category } from '@/components/category/category';
 
 export const Main: React.FC = () => {
   const { isModalOpen, modalType } = React.useContext(ModalContext);
-  console.warn(modalType);
 
   const currentVariant = 'info';
 
   return (
     <main className={classes.main}>
-      <Category/>
+      <Category />
       {isModalOpen && (
         <LayoutModalFull variant={currentVariant}>
           {modalType === 'info' ? <InfoModal /> : <AddItemModal />}

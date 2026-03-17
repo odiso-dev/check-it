@@ -1,12 +1,20 @@
 import React from 'react';
-import classes from './cateogory.module.css';
+import classes from './category.module.css';
+import { ItemCounter } from '@/components/buttons/button-item-counter/item-counter';
 
-export const Category: React.FC = () => {
+interface Props {
+  children: React.PropsWithChildren;
+}
+
+export const Category: React.FC<Props> = (props) => {
+  const { children } = props;
+
   return (
     <details className={classes.category}>
       <summary>
         <h2 className={classes.categoryTitle}>Category</h2>
         <svg
+          className={classes.arrow}
           width="32"
           height="32"
           viewBox="0 0 32 32"
@@ -20,10 +28,13 @@ export const Category: React.FC = () => {
         </svg>
       </summary>
       <div className={classes.categoryContent}>
+        {children}
         <form action="">
           <fieldset>
             <input type="radio" name="" id="" />
             <label htmlFor="">Product example</label>
+
+            <ItemCounter />
           </fieldset>
           <fieldset>
             <input type="radio" name="" id="" />
