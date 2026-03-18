@@ -5,6 +5,7 @@
     align-items: center;
     padding: var(--xs);
     gap: var(--xs);
+    color: var(--primary_dark);
 
     & .units {
         width: 1rem;

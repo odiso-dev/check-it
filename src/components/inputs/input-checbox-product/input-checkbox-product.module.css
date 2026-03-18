@@ -3,6 +3,7 @@
 }
 
 label {
+    color: var(--primary_dark);
     display: flex;
     align-items: center;
     cursor: pointer;
