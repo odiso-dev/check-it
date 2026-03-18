@@ -4,7 +4,12 @@ import classes from './input-checkbox-product.module.css';
 export const InputCheckbox: React.FC = () => {
   return (
     <>
-      <input type="checkbox" name="" id="product_checkbox" />
+      <input
+        type="checkbox"
+        name=""
+        className={classes.productCheckbox}
+        id="product_checkbox"
+      />
 
       <label htmlFor="product_checkbox">
         <svg

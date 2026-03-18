@@ -1,5 +1,5 @@
 import React from 'react';
-import './input-text.module.css';
+import classes from './input-text.module.css';
 
 type Input = 'category' | 'product';
 
@@ -14,13 +14,16 @@ export const InputTextItem: React.FC<Props> = (props) => {
 
   return (
     <>
-      <label htmlFor={type}>{type}</label>
+      <label htmlFor={type} className={classes.inputTextLabel}>
+        {type}
+      </label>
       <input
         type="text"
         name={type}
         id={type}
         placeholder={`Type ${placeholder} name`}
         required={required}
+        className={classes.inputText}
       />
     </>
   );

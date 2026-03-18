@@ -1,21 +1,22 @@
-label {
-    display: inline-block;
-    font-weight: var(--bold);
+    .input_text_label {
+        display: inline-block;
+        font-weight: var(--bold);
 
-    &::first-letter {
-        text-transform: uppercase;
+        &::first-letter {
+            text-transform: uppercase;
+        }
     }
-}
 
-input {
-    text-align: center;
-    padding: var(--xs);
-    border-radius: var(--xs);
-    border: var(--xxxs) solid var(--neutro_normal);
-    font-weight: var(--semibold);
-    font-size: var(--s);
+    .input_text {
+        width: 100%;
+        text-align: center;
+        padding: var(--xs);
+        border-radius: var(--xs);
+        border: var(--xxxs) solid var(--neutro_normal);
+        font-weight: var(--semibold);
+        font-size: var(--s);
 
-    &::placeholder {
-        color: var(--neutro_normal);
+        &::placeholder {
+            color: var(--neutro_normal);
+        }
     }
-}
