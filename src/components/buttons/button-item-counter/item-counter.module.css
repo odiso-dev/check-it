@@ -3,7 +3,6 @@
     width: fit-content;
     justify-content: center;
     align-items: center;
-    padding: var(--xs);
     gap: var(--xs);
     color: var(--primary_dark);
 

@@ -5,5 +5,7 @@
     gap: var(--xs);
     background-color: var(--pure_white);
     border-radius: var(--xxs);
-    padding: 0 var(--s);
+    justify-content: space-around;
+    padding: var(--xxs);
+        margin: var(--s) 0;
 }
