@@ -1,15 +1,31 @@
 import React from 'react';
 import classes from './category.module.css';
-import {Product} from '@/components/product/product'
-
-
+import { Product } from '@/components/product/product';
+import { supabase } from '@/services/supabase-client';
 
 export const Category: React.FC = () => {
+  const [categories, setCategories] = React.useState([]);
+
+  React.useEffect(() => {
+    const categoryList = async () => {
+      const { data, error } = await supabase.from('categories').select('name');
+      console.log(data);
+
+      if (error) {
+        console.error('Error loading data:', error.message);
+      } else {
+        setCategories(data || []);
+      }
+    };
+    categoryList();
+  }, []);
 
   return (
     <details className={classes.category}>
       <summary>
-        <h2 className={classes.categoryTitle}>Category</h2>
+        <h2 className={classes.categoryTitle}>
+          {categories.length > 0 ? categories[0].name : 'Category'}
+        </h2>
         <svg
           className={classes.arrow}
           width="32"
