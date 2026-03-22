@@ -9,6 +9,7 @@ export interface Products{
 export interface ProductsVM{
     id:number;
     name:string;
+    category_id:number;
     quantity: number;
     checked:boolean;
 }

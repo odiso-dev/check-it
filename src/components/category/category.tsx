@@ -39,7 +39,7 @@ export const Category: React.FC = () => {
       </summary>
       <div className={classes.categoryContent}>
         <form action="">
-          <Product />
+          <Product category_id={category.id} />
         </form>
       </div>
     </details>

@@ -4,7 +4,8 @@ import { InputCheckbox } from '@/components/inputs/input-checbox-product/input-c
 import { ItemCounter } from '@/components/buttons/button-item-counter/item-counter';
 import { apiProducts, emptyProduct, mapperProducts } from '@/api/index';
 
-export const Product: React.FC = () => {
+export const Product: React.FC = (props) => {
+  const{category_id} = props;
   const [products, setProducts] = React.useState(emptyProduct());
 
   React.useEffect(() => {
@@ -17,12 +18,14 @@ export const Product: React.FC = () => {
         throw new Error('Error loading data:', error);
       }
     };
-
+    
     fetchData();
   }, []);
+  
+  const filteredProducts = products.filter((product) => product.category_id === category_id);
 
-  return products.map((product) => (
-    <fieldset key={product.id} className={classes.fieldsetProduct}>
+  return filteredProducts.map((product) => (
+    <fieldset key={product.id} className={classes.fieldsetProduct} category_id={product.category_id}>
       <InputCheckbox checked={product.checked} name={product.name} />
       <ItemCounter quantity={product.quantity} />
     </fieldset>

@@ -13,6 +13,7 @@ export const emptyProduct = (): ProductsVM[] => [
   {
     id: 0,
     name: '',
+    category_id:0,
     quantity: 0,
     checked: false,
   },
@@ -22,6 +23,7 @@ export const mapperProducts = (apiProducts: Products[]): ProductsVM[] => {
   return apiProducts.map((product) => ({
     id: product.id,
     name: product.name,
+    category_id: product.category_id,
     quantity: product.quantity,
     checked: product.checked,
   }));
