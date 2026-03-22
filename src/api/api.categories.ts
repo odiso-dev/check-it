@@ -1,15 +1,15 @@
-// import { Categories } from './api.categories.model';
+import type { Categories } from './api.categories.model';
 import { supabase } from '@/services/supabase-client';
 
-export const apiCategories = async () => {
-  try {      
+export const apiCategories = async (): Promise<Categories[]> => {
+  try {
     return await supabase.from('categories').select('*');
   } catch (error) {
     console.error('Error loading data:', error.message);
   }
 };
 
-export const emptyCategories = () => [
+export const emptyCategories = (): Categories[] => [
   {
     id: 0,
     name: '',
