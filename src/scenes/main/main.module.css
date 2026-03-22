@@ -1,4 +1,5 @@
 .main {
-    height: auto;
+    height: clamp(500px, 80dvh, 90%);
     padding: var(--s);
+    overflow-y: auto;
 }

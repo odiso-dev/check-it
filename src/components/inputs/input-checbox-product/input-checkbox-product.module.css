@@ -3,6 +3,8 @@
 }
 
 label {
+    width: 100%;
+    max-width: 20ch;
     color: var(--primary_dark);
     display: flex;
     align-items: center;
@@ -10,6 +12,11 @@ label {
     font-weight: var(--semibold);
     white-space: nowrap;
     gap: var(--xs);
+
+    & span {
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+    }
 }
 
 input:checked+label .checked {

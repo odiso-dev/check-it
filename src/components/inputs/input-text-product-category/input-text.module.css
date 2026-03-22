@@ -1,6 +1,7 @@
     .input_text_label {
         display: inline-block;
         font-weight: var(--bold);
+        color: var(--color_primary_dark);
 
         &::first-letter {
             text-transform: uppercase;
