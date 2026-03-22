@@ -1,7 +1,8 @@
 import React from 'react';
 import classes from './item-counter.module.css';
 
-export const ItemCounter: React.FC = () => {
+export const ItemCounter: React.FC = (props) => {
+  const{quantity} = props;
   const [units, setUnits] = React.useState<number>(1);
 
   const decrease = () => setUnits((prev) => (units > 1 ? prev - 1 : 1));
@@ -34,7 +35,7 @@ export const ItemCounter: React.FC = () => {
         </svg>
       </button>
 
-      <p className={classes.units}>{units}</p>
+      <p className={classes.units}>{quantity}</p>
 
       <button className={classes.plus} onClick={increase}>
         <svg

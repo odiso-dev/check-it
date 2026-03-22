@@ -9,11 +9,10 @@ export const Category: React.FC = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       const { data, error } = await apiCategories();
-      console.warn(data);
       if (!error) {
         setCategories(data);
       } else {
-        console.error('Error loading data:', error);
+        throw new Error('Error loading data:', error);
       }
     };
 

@@ -5,7 +5,7 @@ export const apiCategories = async (): Promise<Categories[]> => {
   try {
     return await supabase.from('categories').select('*');
   } catch (error) {
-    console.error('Error loading data:', error.message);
+    console.error('Error loading data:', error);
   }
 };
 

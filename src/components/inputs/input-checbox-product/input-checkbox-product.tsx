@@ -1,17 +1,20 @@
 import React from 'react';
 import classes from './input-checkbox-product.module.css';
 
-export const InputCheckbox: React.FC = () => {
+export const InputCheckbox: React.FC = (props) => {
+  const{name, checked}= props;
+
   return (
     <>
       <input
         type="checkbox"
         name=""
         className={classes.productCheckbox}
-        id="product_checkbox"
+        id={name}
+        defaultChecked={checked}
       />
 
-      <label htmlFor="product_checkbox">
+      <label htmlFor={name}>
         <svg
           width="32"
           height="32"
@@ -34,7 +37,7 @@ export const InputCheckbox: React.FC = () => {
             fill="none"
           />
         </svg>
-        <span>Product example</span>
+        <span>{name}</span>
       </label>
     </>
   );
