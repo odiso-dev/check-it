@@ -17,16 +17,16 @@ export const Product: React.FC = (props) => {
       } else {
         throw new Error('Error loading data:', error);
       }
-    };
-    
+    };    
     fetchData();
   }, []);
   
+  console.warn(products)
   const filteredProducts = products.filter((product) => product.category_id === category_id);
 
   return filteredProducts.map((product) => (
     <fieldset key={product.id} className={classes.fieldsetProduct} category_id={product.category_id}>
-      <InputCheckbox checked={product.checked} name={product.name} />
+      <InputCheckbox  dataSupaId={product.id} checked={product.checked} name={product.name} />
       <ItemCounter quantity={product.quantity} />
     </fieldset>
   ));

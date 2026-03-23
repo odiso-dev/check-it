@@ -2,7 +2,7 @@
     display: none;
 }
 
-label {
+.label_product {
     width: 100%;
     max-width: 20ch;
     color: var(--primary_dark);

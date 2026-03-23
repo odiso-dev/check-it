@@ -1,8 +1,31 @@
 import React from 'react';
 import classes from './input-checkbox-product.module.css';
+import { supabase } from '@/services/supabase-client';
 
-export const InputCheckbox: React.FC = (props) => {
-  const{name, checked}= props;
+interface Props {
+  name: string;
+  checked: boolean;
+  dataSupaId: number;
+}
+
+export const InputCheckbox: React.FC<Props> = (props) => {
+  const { name, checked, dataSupaId } = props;
+  const [currentStatus, setCurrentStatus] = React.useState(checked);
+
+  const toggleChecked = async (id: number) => {
+    const newState = !currentStatus;
+
+    const { error } = await supabase
+      .from('products')
+      .update({ checked: newState })
+      .eq('id', id);
+
+    if (!error) {
+      setCurrentStatus(newState);
+    } else {
+      console.error('Error loading data:', error);
+    }
+  };
 
   return (
     <>
@@ -11,10 +34,11 @@ export const InputCheckbox: React.FC = (props) => {
         name=""
         className={classes.productCheckbox}
         id={name}
-        defaultChecked={checked}
+        checked={currentStatus}
+        onChange={() => toggleChecked(dataSupaId)}
       />
 
-      <label htmlFor={name}>
+      <label htmlFor={name} className={classes.labelProduct}>
         <svg
           width="32"
           height="32"
