@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './category.module.css';
 import { Product } from '@/components/product/product';
 import { emptyCategories, apiCategories } from '@/api/index';
+import { supabase } from '@/services/supabase-client';
 
 export const Category: React.FC = () => {
   const [categories, setCategories] = React.useState(emptyCategories());
@@ -15,8 +16,34 @@ export const Category: React.FC = () => {
         throw new Error('Error loading data:', error);
       }
     };
-
     fetchData();
+
+    // LISTENER REALTIME SUPABASE
+    const channel = supabase
+      .channel('db-changes')
+      // Products listener
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'products' },
+        (payload) => {
+          console.log('Product changed:', payload);
+          // Update products state
+        },
+      )
+      // Categories listener
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'categories' },
+        (payload) => {
+          console.log('Category changed:', payload);
+          // Update categories state
+        },
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   return categories.map((category) => (

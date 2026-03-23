@@ -21,7 +21,7 @@ export const Product: React.FC = (props) => {
     fetchData();
   }, []);
   
-  console.warn(products)
+  // console.warn(products)
   const filteredProducts = products.filter((product) => product.category_id === category_id);
 
   return filteredProducts.map((product) => (
