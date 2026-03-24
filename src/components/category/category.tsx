@@ -39,7 +39,7 @@ export const Category: React.FC = () => {
           // Update categories state
         },
       )
-      .subscribe();
+      .subscribe((status)=>console.log(status));
 
     return () => {
       supabase.removeChannel(channel);

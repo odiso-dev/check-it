@@ -1,12 +1,17 @@
 import React from 'react';
 import classes from './item-counter.module.css';
+// import {supabase} from '@/services/supabase-client'
 
 export const ItemCounter: React.FC = (props) => {
-  const{quantity} = props;
+  const { quantity } = props;
   const [units, setUnits] = React.useState<number>(1);
 
-  const decrease = () => setUnits((prev) => (units > 1 ? prev - 1 : 1));
+  // const decrease = () => setUnits((prev) => (units > 1 ? prev - 1 : 1));
   const increase = () => setUnits((prev) => (units < 9 ? prev + 1 : 9));
+
+  const decrease = () => {
+    console.log('decrease');
+  };
 
   return (
     <div className={classes.wrapperCounter}>
