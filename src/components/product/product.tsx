@@ -27,7 +27,7 @@ export const Product: React.FC = (props) => {
   return products.filter((product) => product.category_id === category_id).map((product) => (
     <fieldset key={product.id} className={classes.fieldsetProduct} category_id={product.category_id}>
       <InputCheckbox  dataSupaId={product.id} checked={product.checked} name={product.name} />
-      <ItemCounter quantity={product.quantity} />
+      <ItemCounter dataSupaId={product.id} quantity={product.quantity} />
     </fieldset>
   ));
 };
