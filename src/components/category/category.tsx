@@ -53,7 +53,7 @@ export const Category: React.FC = () => {
     <>
       {categories.map((category) => (
         <details key={category.id} className={classes.category}>
-          <summary>
+          <summary className={`${category.name}${category.id}`}>
             <h2 className={classes.categoryTitle}>{category.name}</h2>
             <svg
               className={classes.arrow}
