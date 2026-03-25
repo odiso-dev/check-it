@@ -11,6 +11,10 @@ interface Props {
 export const InputCheckbox: React.FC<Props> = (props) => {
   const { name, checked, dataSupaId } = props;
   const [currentStatus, setCurrentStatus] = React.useState(checked);
+
+    React.useEffect(() => {
+    setCurrentStatus(checked);
+  }, [checked]);
   
 
   const toggleChecked = async (id: number) => {
@@ -28,9 +32,7 @@ export const InputCheckbox: React.FC<Props> = (props) => {
     }
   };
 
-  React.useEffect(() => {
-    setCurrentStatus(checked);
-  }, [checked]);
+
 
   return (
     <>
