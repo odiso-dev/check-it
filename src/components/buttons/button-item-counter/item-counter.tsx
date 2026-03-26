@@ -27,27 +27,28 @@ export const ItemCounter: React.FC = (props) => {
         .eq('id', dataSupaId);
 
       if (error) {
-        console.error('Error al actualizar:', error);
+        console.error('Error to update quantity:', error);
         // Fall back to the local system if the network fails
         setCurrentQuantity(quantity); 
-      } else {
-        console.log('DB actualizada con:', newVal);
       }
     }, 500); 
   };
 
    const handleDecrease = () => {
-    if (currentQuantity <= 0) return;
-    const nextVal = currentQuantity - 1;
-    setCurrentQuantity(nextVal);
-    updateSupabase(nextVal);     
-  };
+     if (currentQuantity > 1) {
+       const nextVal = currentQuantity - 1;
+       setCurrentQuantity(nextVal);
+       updateSupabase(nextVal);
+     }
+   };
 
-  const handleIncrease = () => {
-    const nextVal = currentQuantity + 1;
-    setCurrentQuantity(nextVal);
-    updateSupabase(nextVal); 
-  };
+   const handleIncrease = () => {
+     if (currentQuantity < 9) {
+       const nextVal = currentQuantity + 1;
+       setCurrentQuantity(nextVal);
+       updateSupabase(nextVal);
+     }
+   };
 
   // Clean up when removing component
   React.useEffect(() => {

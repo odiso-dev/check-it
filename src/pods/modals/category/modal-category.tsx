@@ -3,6 +3,8 @@ import classes from './modal-category.module.css';
 import { CloseButton } from '@/components/buttons/button-close/button-close';
 
 export const ModalCategory: React.FC = () => {
+
+
   return (
     <dialog role="dialog" className={classes.modalCategory}>
       <CloseButton />
