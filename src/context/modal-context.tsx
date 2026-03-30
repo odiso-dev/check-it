@@ -2,6 +2,7 @@ import React from 'react';
 
 type ModalContextType = {
   isModalOpen: boolean;
+  isSubModalOpen: boolean;
   openModal: () => void;
   closeModal: () => void;
   modalType: string;

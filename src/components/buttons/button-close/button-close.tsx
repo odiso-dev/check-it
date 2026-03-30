@@ -7,12 +7,22 @@ export const CloseButton: React.FC = () => {
   const { isModalOpen, closeModal, modalType, setModalType } =
     React.useContext(ModalContext);
 
-  const handleClick = () => {
+
+  const parentModal = (e) => {
+    e.stopPropagation();
+    const modalType = e.currentTarget.closest('dialog').getAttribute('data-modal-type');
+    return modalType;
+  };
+  
+  const handleClick = (e) => {
+    parentModal(e);
+    console.warn(parentModal(e), modalType);
     if (isModalOpen) {
       closeModal();
       setModalType(modalType);
     }
   };
+  
 
   return (
     <button

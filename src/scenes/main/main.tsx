@@ -8,8 +8,10 @@ import { ButtonOpenModalItems } from '@/components/buttons/button-modal-items/bu
 import { ModalCategory } from '@/pods/modals/category/modal-category';
 import { Category } from '@/components/category/category';
 
+
+
 export const Main: React.FC = () => {
-  const { isModalOpen, modalType } = React.useContext(ModalContext);
+  const { isModalOpen, isSubModalOpen, modalType } = React.useContext(ModalContext);
 
   const currentVariant = 'info';
 
@@ -22,7 +24,7 @@ export const Main: React.FC = () => {
         </LayoutModalFull>
       )}
       {!isModalOpen ? <ButtonOpenModalItems /> : null}
-      {modalType === 'category' ? <ModalCategory /> : null}
+      {isSubModalOpen ? <ModalCategory /> : null}
     </main>
   );
 };

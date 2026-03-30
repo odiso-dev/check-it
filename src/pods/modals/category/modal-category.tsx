@@ -1,12 +1,26 @@
 import React from 'react';
 import classes from './modal-category.module.css';
 import { CloseButton } from '@/components/buttons/button-close/button-close';
+import { ModalContext } from '@/context/modal-context';
 
 export const ModalCategory: React.FC = () => {
+  const { isModalOpen } = React.useContext(ModalContext);
+  const subModalType:string = 'category';
 
+  React.useEffect(() => {
+    // Clean attributes of html
+    // document.documentElement.removeAttribute('data-modal');
+    document.documentElement.removeAttribute('data-submodal-type');
+    if (isModalOpen) {
+      // Add modal state attr in html
+      // document.documentElement.setAttribute('data-modal', String(isModalOpen));
+      // Add modal type attr in html
+      document.documentElement.setAttribute('data-submodal-type', subModalType);
+    }
+  }, [isModalOpen]);
 
   return (
-    <dialog role="dialog" className={classes.modalCategory}>
+    <dialog role="dialog" className={classes.modalCategory} data-modal-type={subModalType}>
       <CloseButton />
       <div
         className={classes.wrapperModalCategory}
