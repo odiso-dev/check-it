@@ -3,12 +3,11 @@ import classes from './button-select-category.module.css';
 import { ModalContext } from '@/context/modal-context';
 
 export const SelectCategory: React.FC = () => {
-  const { setIsSubModalOpen } = React.useContext(ModalContext);
+  const { setIsSubModalOpen,setSubModalType } = React.useContext(ModalContext);
 
   const handleClick = () => {
-    // setModalType('');
-    // setModalType('category');
     setIsSubModalOpen(true)
+    setSubModalType('categories')
   };
   return (
     <button

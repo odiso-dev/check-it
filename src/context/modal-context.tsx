@@ -6,6 +6,7 @@ type ModalContextType = {
   openModal: () => void;
   closeModal: () => void;
   modalType: string;
+  subModalType: string;
   children: React.PropsWithChildren;
 };
 // Create context
