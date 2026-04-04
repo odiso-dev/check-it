@@ -1,15 +1,18 @@
 import React from 'react';
 import classes from './category.module.css';
 import { Product } from '@/components/product/product';
-import { emptyCategories, apiCategories } from '@/api/index';
-import { supabase } from '@/services/supabase-client';
+// import { emptyCategories, apiCategories } from '@/api/index';
+// import { supabase } from '@/services/supabase-client';
+import { ChannelRealtimeContext } from '@/context/channel-context';
 
 export const Category: React.FC = () => {
-  const [categories, setCategories] = React.useState(emptyCategories());
-
+  const { categories } = React.useContext(ChannelRealtimeContext);
+  /* const [categories, setCategories] = React.useState(emptyCategories());
+  
   React.useEffect(() => {
     const fetchData = async () => {
       const { data, error } = await apiCategories();
+      console.warn(data)
       if (!error) {
         setCategories(data);
       } else {
@@ -42,12 +45,12 @@ export const Category: React.FC = () => {
       )
       .subscribe();
     // .subscribe((status)=>console.log(status));
-
+    
     // Cleanup channel
     return () => {
       supabase.removeChannel(channel);
     };
-  }, []);
+  }, []); */
 
   return (
     <>
