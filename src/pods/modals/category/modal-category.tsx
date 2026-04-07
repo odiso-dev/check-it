@@ -6,7 +6,6 @@ import {ChannelRealtimeContext} from '@/context/channel-context'
 export const ModalCategory: React.FC = () => {
   const subModalType:string = 'categories';
   const{categories} = React.useContext(ChannelRealtimeContext);
-  console.log(categories)
   
 
   return (

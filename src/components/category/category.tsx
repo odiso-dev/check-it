@@ -7,50 +7,6 @@ import { ChannelRealtimeContext } from '@/context/channel-context';
 
 export const Category: React.FC = () => {
   const { categories } = React.useContext(ChannelRealtimeContext);
-  /* const [categories, setCategories] = React.useState(emptyCategories());
-  
-  React.useEffect(() => {
-    const fetchData = async () => {
-      const { data, error } = await apiCategories();
-      console.warn(data)
-      if (!error) {
-        setCategories(data);
-      } else {
-        console.log('Error loading data:', error);
-      }
-    };
-    fetchData();
-
-    // LISTENER REALTIME SUPABASE
-    const channel = supabase
-      .channel('db-changes')
-      // Products listener
-      .on(
-        'postgres_changes',
-        { event: '*', schema: 'public', table: 'products' },
-        (payload) => {
-          console.log('Product changed:', payload);
-          // Update products state
-        },
-      )
-      // Categories listener
-      .on(
-        'postgres_changes',
-        { event: '*', schema: 'public', table: 'categories' },
-        (payload) => {
-          console.log('Category changed:', payload);
-          // Update categories state
-          fetchData();
-        },
-      )
-      .subscribe();
-    // .subscribe((status)=>console.log(status));
-    
-    // Cleanup channel
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, []); */
 
   return (
     <>

@@ -15,7 +15,6 @@ export const ChannelRealtimeProvider: React.FC = (props) => {
         apiCategories(),
         apiProducts(),
       ]);
-      console.log(resCategories)
       // Categories
       if (resCategories.status === 'fulfilled') {
         const { data, error } = resCategories.value;

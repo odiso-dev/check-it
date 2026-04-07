@@ -7,10 +7,12 @@ interface Props {
   type: Input;
   placeholder: string;
   required: boolean;
+  value:string;
+  onchange:()=>void;
 }
 
 export const InputTextItem: React.FC<Props> = (props) => {
-  const { type, placeholder, required } = props;
+  const { type, placeholder, required, value, onchange } = props;
 
   return (
     <>
@@ -24,6 +26,8 @@ export const InputTextItem: React.FC<Props> = (props) => {
         placeholder={`Type ${placeholder} name`}
         required={required}
         className={classes.inputText}
+        onChange={onchange}
+        value={value}
       />
     </>
   );
