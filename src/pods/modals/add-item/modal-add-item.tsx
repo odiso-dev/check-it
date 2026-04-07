@@ -9,8 +9,9 @@ export const AddItemModal: React.FC = () => {
 
   return (
     <form className={classes.addItemModal} id="add_item_modal">
-      <InputTextItem type="category" placeholder="category" required value={value} onchange={(e)=>setValue(e.target.value)}/>
-      <ButtonAddItem value={value} onClear={()=>setValue('')}/>
+      <InputTextItem type="category" placeholder="category" required value={value} onChange={(e)=> setValue(e.target.value)
+      }/>
+      <ButtonAddItem value={value} onClear={()=>setValue('')} isDisabled={value.length === 0}/>
       <hr></hr>
       <InputTextItem type="product" placeholder="product" required />
       <SelectCategory />

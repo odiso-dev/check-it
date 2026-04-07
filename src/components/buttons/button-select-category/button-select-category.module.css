@@ -8,4 +8,8 @@
     font-weight: var(--bold);
     border-radius: var(--xs);
     border: var(--xxs) solid var(--color_primary_dark);
+
+    &:focus{
+            outline:var(--xxxs) solid var(--color_primary_dark)
+        }
 }

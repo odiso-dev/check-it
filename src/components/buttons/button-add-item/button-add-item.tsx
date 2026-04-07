@@ -6,10 +6,11 @@ import { supabase } from '@/services/supabase-client';
 interface Props {
   value: string;
   onClear: () => void;
+  isDisabled: boolean;
 }
 
 export const ButtonAddItem: React.FC<Props> = (props) => {
-  const { value, onClear } = props;
+  const { value, onClear, isDisabled } = props;
   const { isModalOpen } = React.useContext(ModalContext);
 
   const handleOnClick = async () => {
@@ -42,6 +43,7 @@ export const ButtonAddItem: React.FC<Props> = (props) => {
       aria-expanded={isModalOpen}
       aria-controls="add_item_modal"
       onClick={handleOnClick}
+      disabled={isDisabled}
     >
       Add item
     </button>

@@ -20,4 +20,7 @@
         &::placeholder {
             color: var(--neutro_normal);
         }
+        &:focus{
+            outline:var(--xxxs) solid var(--color_primary_dark)
+        }
     }
