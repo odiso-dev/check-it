@@ -4,9 +4,10 @@ import {ModalCategoryContext} from './modal-category-context'
 export const ModalCategoryProvider:React.FC = (props)=>{
     const {children} = props;
     const[categorySelected, setCategorySelected] =  React.useState('');
+    const[isSelected, setIsSelected] = React.useState(false);
 
     return (
-        <ModalCategoryContext.Provider value={{categorySelected, setCategorySelected}}>
+        <ModalCategoryContext.Provider value={{categorySelected, setCategorySelected, isSelected, setIsSelected}}>
             {children}
         </ModalCategoryContext.Provider>
     );
