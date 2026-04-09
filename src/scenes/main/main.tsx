@@ -12,7 +12,6 @@ import { Category } from '@/components/category/category';
 
 export const Main: React.FC = () => {
   const { isModalOpen, isSubModalOpen, modalType } = React.useContext(ModalContext);
-
   const currentVariant = 'info';
 
   return (

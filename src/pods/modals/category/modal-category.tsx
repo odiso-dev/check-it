@@ -1,11 +1,15 @@
 import React from 'react';
 import classes from './modal-category.module.css';
 import { CloseButton } from '@/components/buttons/button-close/button-close';
-import {ChannelRealtimeContext} from '@/context/channel-context'
+import {ChannelRealtimeContext} from '@/context/channel-context';
+import {ModalCategoryContext} from '@/context/modal-category-context';
 
 export const ModalCategory: React.FC = () => {
   const subModalType:string = 'categories';
-  const{categories} = React.useContext(ChannelRealtimeContext);
+  const {categories} = React.useContext(ChannelRealtimeContext);
+  const {categorySelected, setCategorySelected} = React.useContext(ModalCategoryContext);
+
+  console.log(categorySelected)
   
 
   return (
@@ -26,7 +30,7 @@ export const ModalCategory: React.FC = () => {
           <ul>
             {categories.map(category=>(
                <li key={category.id} role="option" aria-selected="false" id={`category_${category.id}`}>
-              <button>{category.name}</button>
+              <button value={category.name} onClick={(e)=>setCategorySelected(e.currentTarget.value)}>{category.name}</button>
             </li>
             ))}           
           </ul>

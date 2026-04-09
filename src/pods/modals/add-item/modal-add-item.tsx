@@ -5,6 +5,7 @@ import { SelectCategory } from '@/components/buttons/button-select-category/butt
 import classes from './modal-add-item.module.css';
 
 export const AddItemModal: React.FC = () => {
+  // Input text value
   const[value, setValue] =  React.useState<string>('');
 
   return (
@@ -14,8 +15,8 @@ export const AddItemModal: React.FC = () => {
       <ButtonAddItem value={value} onClear={()=>setValue('')} isDisabled={value.length === 0}/>
       <hr></hr>
       <InputTextItem type="product" placeholder="product" required />
-      <SelectCategory />
-      <ButtonAddItem />
+      <SelectCategory/>
+      <ButtonAddItem/>
     </form>
   );
 };
