@@ -26,7 +26,7 @@ export const AddItemModal: React.FC = () => {
       />
       <hr></hr>
       <InputTextItem type="product" placeholder="product" required />
-      <SelectCategory />
+      <SelectCategory isDisabled />
       <ButtonAddItem isDisabled={!isSelected ? true : false} />
     </form>
   );

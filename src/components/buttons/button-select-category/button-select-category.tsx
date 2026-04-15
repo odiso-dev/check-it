@@ -2,7 +2,12 @@ import React from 'react';
 import classes from './button-select-category.module.css';
 import { ModalContext } from '@/context/modal-context';
 
-export const SelectCategory: React.FC = () => {
+interface Props{
+  isDisabled: boolean;
+}
+
+export const SelectCategory: React.FC<Props> = (props) => {
+  const {isDisabled} = props;
   const { setIsSubModalOpen,setSubModalType } = React.useContext(ModalContext);
 
   const handleClick = () => {
@@ -18,6 +23,7 @@ export const SelectCategory: React.FC = () => {
       aria-expanded="false"
       aria-controls="category_list"
       onClick={handleClick}
+      disabled={isDisabled}
     >
       <span id="select_item">Select category</span>
       <svg

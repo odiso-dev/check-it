@@ -12,4 +12,9 @@
     &:focus{
             outline:var(--xxxs) solid var(--color_primary_dark)
         }
+    &:disabled{
+        background-color: var(--neutro_light);
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
 }
