@@ -7,7 +7,8 @@ import classes from './modal-add-item.module.css';
 
 export const AddItemModal: React.FC = () => {
   // Input text value
-  const [value, setValue] = React.useState<string>('');
+  const [valueInputCategory, setValueInputCategory] = React.useState<string>('');
+  const [valueInputProduct, setValueInputProduct] = React.useState<string>('');
   const { isSelected } = React.useContext(ModalCategoryContext);
 
   return (
@@ -16,18 +17,20 @@ export const AddItemModal: React.FC = () => {
         type="category"
         placeholder="category"
         required
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
+        value={valueInputCategory}
+        onChange={(e) => setValueInputCategory(e.target.value)}
       />
       <ButtonAddItem
-        value={value}
-        onClear={() => setValue('')}
-        isDisabled={value.length === 0}
+        value={valueInputCategory}
+        onClear={() => setValueInputCategory('')}
+        isDisabled={valueInputCategory.length === 0}
       />
       <hr></hr>
-      <InputTextItem type="product" placeholder="product" required />
-      <SelectCategory isDisabled />
-      <ButtonAddItem isDisabled={!isSelected ? true : false} />
+      <InputTextItem type="product" placeholder="product" required 
+      value={valueInputProduct}
+      onChange={(e) => setValueInputProduct(e.target.value)}/>
+      <SelectCategory isDisabled={valueInputProduct.length === 0} />
+      {<ButtonAddItem isDisabled={isSelected && valueInputProduct.length !== 0 ? false: true} />}      
     </form>
   );
 };
