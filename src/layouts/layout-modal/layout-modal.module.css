@@ -2,13 +2,14 @@
     position: fixed;
     bottom: 0;
     width: 328px;
-    height: 90%;
+    height: clamp(560px, 50vh, 600px);
     border: var(--xxxs) solid var(--color_primary_dark);
     border-radius: var(--xxs);
     display: grid;
     place-items: center;
     place-self: center;
     padding: var(--s);
+    margin: var(--s) auto;
 
 }
 

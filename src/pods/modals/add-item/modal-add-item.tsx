@@ -30,7 +30,8 @@ export const AddItemModal: React.FC = () => {
       value={valueInputProduct}
       onChange={(e) => setValueInputProduct(e.target.value)}/>
       <SelectCategory isDisabled={valueInputProduct.length === 0} />
-      {<ButtonAddItem isDisabled={isSelected && valueInputProduct.length !== 0 ? false: true} />}      
+      {<ButtonAddItem isDisabled={isSelected && valueInputProduct.length !== 0 ? false: true} 
+      />}      
     </form>
   );
 };
