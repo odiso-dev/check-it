@@ -12,3 +12,21 @@ hr {
     width: 100%;
     border-radius: var(--xs);
 }
+
+.info_pill {
+    width: auto;
+    outline: var(--xxxs) solid var(--color_primary_dark);
+    margin: 0 auto;
+    padding: var(--xs) var(--s);
+    border-radius: var(--s);
+    cursor: pointer;
+
+    &::after {
+        content: 'x';
+        position: relative;
+        bottom: 8px;
+        left: 4px;
+        color: var(--color_primary_dark);
+    }
+
+}

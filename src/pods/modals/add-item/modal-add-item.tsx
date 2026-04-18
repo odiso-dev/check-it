@@ -9,8 +9,14 @@ export const AddItemModal: React.FC = () => {
   // Input text value
   const [valueInputCategory, setValueInputCategory] = React.useState<string>('');
   const [valueInputProduct, setValueInputProduct] = React.useState<string>('');
-  const { isSelected } = React.useContext(ModalCategoryContext);
-
+  const { isSelected,setIsSelected, categorySelected, setCategorySelected } = React.useContext(ModalCategoryContext);
+  
+  const clearcategorySelected = (e)=>{
+    e.stopPropagation();
+    setCategorySelected('');
+    setIsSelected(false)
+  };
+  
   return (
     <form className={classes.addItemModal} id="add_item_modal">
       <InputTextItem
@@ -29,6 +35,8 @@ export const AddItemModal: React.FC = () => {
       <InputTextItem type="product" placeholder="product" required 
       value={valueInputProduct}
       onChange={(e) => setValueInputProduct(e.target.value)}/>
+      <h2 title='Delete selected item' className={(!categorySelected || categorySelected.length === 0) ? null : classes.infoPill}
+      onClick={(e)=>clearcategorySelected(e)}>{categorySelected}</h2>
       <SelectCategory isDisabled={valueInputProduct.length === 0} />
       {<ButtonAddItem isDisabled={isSelected && valueInputProduct.length !== 0 ? false: true} 
       />}      
