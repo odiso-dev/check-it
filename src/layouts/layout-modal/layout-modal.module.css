@@ -10,6 +10,7 @@
     place-self: center;
     padding: var(--s);
     margin: var(--s) auto;
+    z-index: 9;
 
 }
 

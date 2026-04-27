@@ -1,0 +1,5 @@
+.button_info{
+    position: fixed;
+    bottom: 12dvh;
+    z-index: 1;
+}
