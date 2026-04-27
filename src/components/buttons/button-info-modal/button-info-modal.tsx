@@ -1,5 +1,6 @@
 import React from 'react';
 import { ModalContext } from '@/context/modal-context';
+import classes from './button-info-modal.module.css'
 
 export const InfoButton: React.FC = () => {
   // Context
@@ -15,7 +16,7 @@ export const InfoButton: React.FC = () => {
 
   return (
     <button
-      className={'header__info'}
+      className={classes.buttonInfo}
       onClick={handleClick}
       aria-label="Show info modal"
       aria-haspopup="dialog"

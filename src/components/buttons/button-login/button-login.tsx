@@ -1,0 +1,43 @@
+import React from 'react';
+import { ModalContext } from '@/context/modal-context';
+
+export const Login: React.FC = () => {
+  // Context
+  const { isModalOpen, openModal, setModalType } =
+    React.useContext(ModalContext);
+
+  const handleClick = () => {
+    if (!isModalOpen) {
+      openModal();
+      setModalType('login');
+    }
+  };
+
+  return (
+    <button
+      className={'header__login'}
+      onClick={handleClick}
+      aria-label="Show login modal"
+      aria-haspopup="dialog"
+      aria-expanded={isModalOpen}
+    >
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 32 32"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16 1C24.2843 1 31 7.71573 31 16C31 24.2843 24.2843 31 16 31C7.71573 31 1 24.2843 1 16C1 7.71573 7.71573 1 16 1Z"
+          stroke="var(--color_primary_dark)"
+          strokeWidth="2"
+        />
+        <path
+          d="M18.5 12C18.5 11.337 18.2366 10.7011 17.7678 10.2322C17.2989 9.76339 16.663 9.5 16 9.5C15.337 9.5 14.7011 9.76339 14.2322 10.2322C13.7634 10.7011 13.5 11.337 13.5 12C13.5 12.663 13.7634 13.2989 14.2322 13.7678C14.7011 14.2366 15.337 14.5 16 14.5C16.663 14.5 17.2989 14.2366 17.7678 13.7678C18.2366 13.2989 18.5 12.663 18.5 12ZM12 12C12 10.9391 12.4214 9.92172 13.1716 9.17157C13.9217 8.42143 14.9391 8 16 8C17.0609 8 18.0783 8.42143 18.8284 9.17157C19.5786 9.92172 20 10.9391 20 12C20 13.0609 19.5786 14.0783 18.8284 14.8284C18.0783 15.5786 17.0609 16 16 16C14.9391 16 13.9217 15.5786 13.1716 14.8284C12.4214 14.0783 12 13.0609 12 12ZM10.5406 22.5H21.4625C21.1844 20.5219 19.4844 19 17.4312 19H14.575C12.5219 19 10.8219 20.5219 10.5438 22.5H10.5406ZM9 23.0719C9 19.9937 11.4938 17.5 14.5719 17.5H17.4281C20.5063 17.5 23 19.9937 23 23.0719C23 23.5844 22.5844 24 22.0719 24H9.92813C9.41563 24 9 23.5844 9 23.0719Z"
+          fill="var(--color_primary_dark)"
+        />
+      </svg>
+    </button>
+  );
+};

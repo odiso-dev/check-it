@@ -1,0 +1,26 @@
+.login_form {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--s);
+    color: var(--color_primary_dark);
+    
+    & h2{
+        font-size: var(--m);
+        text-align: center;
+    }
+
+    & input {
+        width: 100%;
+        padding: var(--xs);
+        border-radius: var(--xs);
+        border: var(--xxxs) solid var(--neutro_normal);
+        font-weight: var(--semibold);
+        font-size: var(--s);
+    }
+    & .buttons{
+        display: flex;
+        justify-content: space-between;
+        font-weight: var(--bold);
+    }
+}
