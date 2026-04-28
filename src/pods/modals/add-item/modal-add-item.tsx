@@ -32,6 +32,7 @@ export const AddItemModal: React.FC = () => {
         value={valueInputCategory}
         onClear={() => setValueInputCategory('')}
         isDisabled={valueInputCategory.length === 0}
+        infoTableType="categories"
       />
       <hr></hr>
       <InputTextItem
@@ -58,6 +59,7 @@ export const AddItemModal: React.FC = () => {
           isDisabled={
             isSelected && valueInputProduct.length !== 0 ? false : true
           }
+          infoTableType="products"
         />
       }
     </form>
