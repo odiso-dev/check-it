@@ -9,7 +9,7 @@ import { ModalCategory } from '@/pods/modals/category/modal-category';
 import { Category } from '@/components/category/category';
 import { AuthForm } from '@/components/form/login';
 import { InfoButton } from '@/components/buttons/button-info-modal/button-info-modal';
-
+import { Toast } from '@/components/toasts-info/toast';
 
 export const Main: React.FC = () => {
   const { isModalOpen, isSubModalOpen, modalType } =
@@ -18,6 +18,7 @@ export const Main: React.FC = () => {
 
   return (
     <main className={classes.main}>
+      <Toast title="Toast title" text="Toast text" type="success" />
       <InfoButton />
       <Category />
       {isModalOpen && (
