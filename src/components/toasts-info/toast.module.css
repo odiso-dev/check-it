@@ -1,12 +1,17 @@
 .container_toast {
     width: 100%;
     position: absolute;
-    /* top: 6dvh; */
+    top: -16dvh;
     left: 0;
     z-index: 99;
-
+    opacity: 0.5;
+    transition: all 0.5s ease-in-out 0s;
+    
+    
     &.animate {
-        animation: showToast 0.5s ease-in-out 300ms normal both;
+        /* animation: showToast 0.5s ease-in-out 300ms normal both; */
+        top: 6dvh;
+        opacity: 1;
     }
 
     & .toast {
@@ -18,6 +23,8 @@
         border-radius: var(--xs);
         gap: var(--s);
         margin: 0 auto;
+        border: var(--xxxs) solid var(--neutro_normal);
+        box-shadow: 0px 0px var(--s) 0px var(--neutro_light);
 
         &.success {
             border: var(--xxxs) solid var(--secondary_normal);
@@ -39,16 +46,6 @@
             box-shadow: 0px 0px var(--s) 0px var(--accent_light);
         }
     }
-}
-
-@keyframes showToast {
-    from {
-        top: -6dvh;
-        opacity: 0;
-    }
-
-    to {
-        top: 6dvh;
-        opacity: 1;
-    }
+    & .icon{}
+    & .message{}
 }
