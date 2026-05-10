@@ -8,7 +8,7 @@ import { ModalContext } from '@/context/modal-context';
 export const ModalCategory: React.FC = () => {
   const subModalType: string = 'categories';
   const { categories } = React.useContext(ChannelRealtimeContext);
-  const {setCategorySelected, setIsSelected } =
+  const {setCategorySelected, setIsSelected, setCategoryModalId} =
     React.useContext(ModalCategoryContext);
   const { closeModal } = React.useContext(ModalContext);
   
@@ -19,6 +19,8 @@ export const ModalCategory: React.FC = () => {
       // Close modal when category selected
       closeModal();      
     };
+
+
   return (
     <dialog
       role="dialog"
@@ -41,10 +43,12 @@ export const ModalCategory: React.FC = () => {
           <ul>
             {categories.map((category) => (
               <li
+              onClick={()=>setCategoryModalId(category.id)}
                 key={category.id}
                 role="option"
                 aria-selected="false"
                 id={`category_${category.id}`}
+                data-category-id={category.id}
               >
                 <button value={category.name} onClick={(e)=>handleOnClick(e)}>
                   {category.name}

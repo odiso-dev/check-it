@@ -5,7 +5,7 @@ import {AuthContext} from './auth-context'
 
 export const AuthProvider:React.FC = ({ children }: { children: ReactNode }) => {
   const [session, setSession] = React.useState<Session | null>(null);
-  console.log(session)
+  // console.log('[SESSION]', session)
 
   React.useEffect(() => {
     // 1. Obtener sesión actual al cargar
