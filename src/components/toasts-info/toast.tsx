@@ -5,13 +5,8 @@ import IconInfo from '@/assets/icons/icon-info.svg?react';
 import IconWarning from '@/assets/icons/icon-warning.svg?react';
 import IconAlert from '@/assets/icons/icon-alert.svg?react';
 
-interface Props {
-  title: string;
-  text: string;
-  type: ToastType;
-}
+import { useToastStore } from '@/stores/toast-notificacion-store';
 
-type ToastType = 'success' | 'info' | 'warning' | 'alert';
 
 // An object that associates each type with its icon 
 const iconMap = {
@@ -21,8 +16,12 @@ const iconMap = {
   alert: <IconAlert />,
 };
 
-export const Toast: React.FC<Props> = (props) => {
-  const { title, text, type } = props;
+
+export const Toast = () => {
+  const { title, text, type,isOpen } = useToastStore();
+
+  if (!isOpen) return null;
+
   return (
     <div className={`${classes.containerToast} ${classes.animate}`}>
       <div
