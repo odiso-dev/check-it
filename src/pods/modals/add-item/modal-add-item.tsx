@@ -5,15 +5,26 @@ import { SelectCategory } from '@/components/buttons/button-select-category/butt
 import { ModalCategoryContext } from '@/context/modal-category-context';
 import classes from './modal-add-item.module.css';
 
+import { useToastStore } from '@/stores/toast-notificacion-store';
+import { Toast } from '@/components/toasts-info/toast';
+
 export const AddItemModal: React.FC = () => {
+  const { isOpen, showToast } = useToastStore();
+
+  React.useEffect(() => {
+    showToast('title', 'text', 'success', true);
+  }, [showToast]);
+
   // Input text value
-  const [newValue, setNewValue] =  React.useState<string | null>(null);
+  const [newValue, setNewValue] = React.useState<string | null>(null);
   const [valueInputCategory, setValueInputCategory] =
     React.useState<string>('');
   const [valueInputProduct, setValueInputProduct] = React.useState<string>('');
   const { isSelected, setIsSelected, categorySelected, setCategorySelected } =
     React.useContext(ModalCategoryContext);
-    const [isCategoryOrProduct, setIsCategoryOrProduct] = React.useState<string | null>(null);
+  const [isCategoryOrProduct, setIsCategoryOrProduct] = React.useState<
+    string | null
+  >(null);
 
   const clearcategorySelected = (e) => {
     e.stopPropagation();
@@ -21,20 +32,20 @@ export const AddItemModal: React.FC = () => {
     setIsSelected(false);
   };
 
-  const handleInputCategoriesText = (e)=>{
-    setValueInputCategory(e.currentTarget.value)
-    setIsCategoryOrProduct('categories')
-    setNewValue(e.currentTarget.value)
+  const handleInputCategoriesText = (e) => {
+    setValueInputCategory(e.currentTarget.value);
+    setIsCategoryOrProduct('categories');
+    setNewValue(e.currentTarget.value);
   };
-  const handleInputProductsText = (e)=>{
-    setValueInputProduct(e.currentTarget.value)
-    setIsCategoryOrProduct('products')
-    setNewValue(e.currentTarget.value)
+  const handleInputProductsText = (e) => {
+    setValueInputProduct(e.currentTarget.value);
+    setIsCategoryOrProduct('products');
+    setNewValue(e.currentTarget.value);
   };
-
 
   return (
     <form className={classes.addItemModal} id="add_item_modal">
+      {isOpen && <Toast />}
       <InputTextItem
         type="category"
         placeholder="category"
@@ -45,7 +56,7 @@ export const AddItemModal: React.FC = () => {
       />
       <ButtonAddItem
         // value={valueInputCategory}
-        valueInputCategory= {valueInputCategory}
+        valueInputCategory={valueInputCategory}
         onClear={() => setValueInputCategory('')}
         isDisabled={valueInputCategory.length === 0}
         infoTableType={isCategoryOrProduct}
@@ -74,8 +85,8 @@ export const AddItemModal: React.FC = () => {
       <SelectCategory isDisabled={valueInputProduct.length === 0} />
       {
         <ButtonAddItem
-        // valueInputProduct= {valueInputProduct}
-        value={newValue}
+          // valueInputProduct= {valueInputProduct}
+          value={newValue}
           isDisabled={
             isSelected && valueInputProduct.length !== 0 ? false : true
           }

@@ -9,7 +9,7 @@
     
     
     &.animate {
-        /* animation: showToast 0.5s ease-in-out 300ms normal both; */
+        animation: hideToast 0.5s ease-in-out 4s normal both;
         top: 6dvh;
         opacity: 1;
     }
@@ -48,4 +48,11 @@
     }
     & .icon{}
     & .message{}
+}
+
+@keyframes hideToast {
+
+    to {
+        top: -16dvh;
+    }
 }
