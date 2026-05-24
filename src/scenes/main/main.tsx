@@ -10,13 +10,31 @@ import { Category } from '@/components/category/category';
 import { AuthForm } from '@/components/form/login';
 import { InfoButton } from '@/components/buttons/button-info-modal/button-info-modal';
 
+import {AuthContext} from '@/context/auth-context'
+
+import { useToastStore } from '@/stores/toast-notificacion-store';
+import { Toast } from '@/components/toasts-info/toast';
+
+
+
 export const Main: React.FC = () => {
+  const { isOpen, showToast } = useToastStore();
+  const {session} = React.useContext(AuthContext)
+  console.log(session)
+
+
   const { isModalOpen, isSubModalOpen, modalType } =
     React.useContext(ModalContext);
   const currentVariant = 'info';
 
+
+  React.useEffect(() => {
+      showToast('Signed in', 'Session successfully started', 'success');
+    }, [showToast]);
+
   return (
-    <main className={classes.main}>      
+    <main className={classes.main}>
+      {isOpen && session!== null && <Toast />}
       <InfoButton />
       <Category />
       {isModalOpen && (

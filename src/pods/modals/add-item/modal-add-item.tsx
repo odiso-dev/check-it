@@ -5,15 +5,7 @@ import { SelectCategory } from '@/components/buttons/button-select-category/butt
 import { ModalCategoryContext } from '@/context/modal-category-context';
 import classes from './modal-add-item.module.css';
 
-import { useToastStore } from '@/stores/toast-notificacion-store';
-import { Toast } from '@/components/toasts-info/toast';
-
 export const AddItemModal: React.FC = () => {
-  const { isOpen, showToast } = useToastStore();
-
-  React.useEffect(() => {
-    showToast('title', 'text', 'success', true);
-  }, [showToast]);
 
   // Input text value
   const [newValue, setNewValue] = React.useState<string | null>(null);
@@ -45,17 +37,14 @@ export const AddItemModal: React.FC = () => {
 
   return (
     <form className={classes.addItemModal} id="add_item_modal">
-      {isOpen && <Toast />}
       <InputTextItem
         type="category"
         placeholder="category"
         required
         value={valueInputCategory}
-        // onChange={(e) => setValueInputCategory(e.target.value)}
         onChange={handleInputCategoriesText}
       />
       <ButtonAddItem
-        // value={valueInputCategory}
         valueInputCategory={valueInputCategory}
         onClear={() => setValueInputCategory('')}
         isDisabled={valueInputCategory.length === 0}
@@ -68,7 +57,6 @@ export const AddItemModal: React.FC = () => {
         placeholder="product"
         required
         value={valueInputProduct}
-        // onChange={(e) => setValueInputProduct(e.target.value)}
         onChange={handleInputProductsText}
       />
       <h2
@@ -85,7 +73,6 @@ export const AddItemModal: React.FC = () => {
       <SelectCategory isDisabled={valueInputProduct.length === 0} />
       {
         <ButtonAddItem
-          // valueInputProduct= {valueInputProduct}
           value={newValue}
           isDisabled={
             isSelected && valueInputProduct.length !== 0 ? false : true

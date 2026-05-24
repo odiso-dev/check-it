@@ -1,6 +1,7 @@
 .category {
     cursor: pointer;
     padding: var(--s);
+    pointer-events: none;
 
     &>summary {
         display: flex;
@@ -10,6 +11,10 @@
         background-color: var(--secondary_lighter);
         padding: var(--xs) var(--s);
         filter: drop-shadow(0px 0px 4px var(--neutro_lighter));
+
+        &>svg{
+            pointer-events: all;
+        }
 
     }
 

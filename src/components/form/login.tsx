@@ -19,10 +19,10 @@ export const AuthForm:React.FC = () => {
     if (error) alert(error.message);
   };
 
-  /* const handleSignOut = async (e: React.FormEvent)=>{
+  const handleSignOut = async (e: React.FormEvent)=>{
     e.preventDefault();
     supabase.auth.signOut()
-  }; */
+  };
 
   return (
     <form action="" className={classes.loginForm}>
@@ -36,7 +36,7 @@ export const AuthForm:React.FC = () => {
       <hr></hr>
       <div className={classes.buttons}>
       <button onClick={handleLogin}>Login</button>
-      <button onClick={() => supabase.auth.signOut()}>Sign out</button>
+      <button onClick={handleSignOut}>Sign out</button>
       </div>
       {<button onClick={handleSignUp}>Sign up</button>}
     </form>

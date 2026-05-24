@@ -53,6 +53,6 @@
 @keyframes hideToast {
 
     to {
-        top: -16dvh;
+        top: -50dvh;
     }
 }
