@@ -3,7 +3,7 @@ import { ModalContext } from '@/context/modal-context';
 import classes from './button-modal-items.module.css';
 
 export const ButtonOpenModalItems: React.FC = () => {
-  const { isModalOpen, openModal, setModalType } =
+  const { isModalOpen, openModal, closeModal, setModalType } =
     React.useContext(ModalContext);
 
   const handleClick = () => {
@@ -12,6 +12,13 @@ export const ButtonOpenModalItems: React.FC = () => {
       setModalType('addItems');
       openModal();
     }
+    if (isModalOpen) {
+      closeModal();
+      setModalType('');
+      setModalType('addItems');
+      openModal();
+    }
+    
   };
 
   return (

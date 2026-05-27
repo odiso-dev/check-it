@@ -3,11 +3,16 @@ import { ModalContext } from '@/context/modal-context';
 
 export const Login: React.FC = () => {
   // Context
-  const { isModalOpen, openModal, setModalType } =
+  const { isModalOpen, openModal, closeModal, setModalType } =
     React.useContext(ModalContext);
 
   const handleClick = () => {
     if (!isModalOpen) {
+      openModal();
+      setModalType('login');
+    }
+    if (isModalOpen) {
+      closeModal();
       openModal();
       setModalType('login');
     }

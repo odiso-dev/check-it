@@ -4,11 +4,16 @@ import classes from './button-info-modal.module.css'
 
 export const InfoButton: React.FC = () => {
   // Context
-  const { isModalOpen, openModal, setModalType } =
+  const { isModalOpen, openModal,closeModal, setModalType } =
     React.useContext(ModalContext);
 
   const handleClick = () => {
     if (!isModalOpen) {
+      openModal();
+      setModalType('info');
+    }
+    if (isModalOpen) {
+      closeModal();
       openModal();
       setModalType('info');
     }

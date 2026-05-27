@@ -12,7 +12,8 @@ interface Props {
 }
 export const LayoutModalFull: React.FC<Props> = (props) => {
   const { children, variant } = props;
-  const {modalType} = React.useContext(ModalContext)
+  const {modalType} = React.useContext(ModalContext);
+  
 
   return (
     <dialog

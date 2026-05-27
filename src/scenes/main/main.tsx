@@ -20,12 +20,13 @@ import { Toast } from '@/components/toasts-info/toast';
 export const Main: React.FC = () => {
   const { isOpen, showToast } = useToastStore();
   const {session} = React.useContext(AuthContext)
-  console.log(session)
+  // console.log(session)
 
 
   const { isModalOpen, isSubModalOpen, modalType } =
     React.useContext(ModalContext);
   const currentVariant = 'info';
+
 
 
   React.useEffect(() => {
