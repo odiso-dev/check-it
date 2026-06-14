@@ -12,10 +12,9 @@ export const InputCheckbox: React.FC<Props> = (props) => {
   const { name, checked, dataSupaId } = props;
   const [currentStatus, setCurrentStatus] = React.useState(checked);
 
-    React.useEffect(() => {
+  React.useEffect(() => {
     setCurrentStatus(checked);
   }, [checked]);
-  
 
   const toggleChecked = async (id: number) => {
     const newState = !currentStatus;
@@ -31,8 +30,6 @@ export const InputCheckbox: React.FC<Props> = (props) => {
       setCurrentStatus(!newState);
     }
   };
-
-
 
   return (
     <>
@@ -68,7 +65,7 @@ export const InputCheckbox: React.FC<Props> = (props) => {
             fill="none"
           />
         </svg>
-        <span>{name}</span>
+        <span className={classes.product_text}>{name}</span>
       </label>
     </>
   );
