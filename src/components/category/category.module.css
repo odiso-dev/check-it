@@ -1,7 +1,7 @@
 .category {
     cursor: pointer;
     padding: var(--s);
-    pointer-events: none;
+    /* pointer-events: none; */
 
     &>summary {
         display: flex;
