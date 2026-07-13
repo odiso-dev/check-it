@@ -24,32 +24,8 @@ export const ButtonAddItem: React.FC<Props> = (props) => {
   const { isModalOpen } = React.useContext(ModalContext);
   const { session } = React.useContext(AuthContext);
   const { categoryModalId } = React.useContext(ModalCategoryContext);
-  // console.warn('[categoryModalId]', categoryModalId);
 
-  // console.log('[SESSION]', session)
-  // console.warn('[infoTableType]', infoTableType);
-  // console.warn('[value]', value);
-  // console.log('[valueInputCategory]', valueInputCategory);
-  // console.log('[valueInputProduct]', valueInputProduct);
-
-  /* const handleOnClick = async () => {
-    try {
-      const { data, error } = await supabase
-        .from(infoTableType)
-        .insert({ name: value, created_by: session.user.id })
-        .select();
-
-      // TODO => Show toast notification (Toast, Alert, etc.)
-      if (error) throw error;
-
-      // Successfully insert
-      console.log('Insert successfully:', data);
-      // Clear input value
-      onClear();
-    } catch (error) {
-      console.error('Error to insert:', error.message);
-    }
-  }; */
+  
   const handleOnClick = async () => {
     try {
       // Base fields common to both tables
@@ -62,7 +38,7 @@ export const ButtonAddItem: React.FC<Props> = (props) => {
       if (infoTableType === 'products') {
         // Make sure you have this ID to hand
         if (!categoryModalId) {
-          console.error('Falta el category_id para insertar en productos');
+          console.error('The category_id is missing for insertion into products');
           return;
         }
         // Add category.id in payload object
@@ -99,39 +75,3 @@ export const ButtonAddItem: React.FC<Props> = (props) => {
     </button>
   );
 };
-
-/* 
-const handleOnClick = async () => {    
-  try {
-    // 1. Campos base que tienen ambas tablas
-    const payload: any = { 
-      name: value, 
-      created_by: session.user.id 
-    };
-
-    // 2. Condición específica: Si es producto, añadimos la FK de la categoría
-    if (infoTableType === 'products') {
-      // Importante: asegúrate de tener este ID disponible (vía props o contexto)
-      if (!categoryId) {
-        console.error("Falta el category_id para insertar en productos");
-        return;
-      }
-      payload.category_id = categoryId;
-    }
-
-    // 3. Petición única
-    const { data, error } = await supabase
-      .from(infoTableType)
-      .insert([payload])
-      .select();
-
-    if (error) throw error;
-
-    console.log('Insert exitoso en:', infoTableType, data);
-    onClear();
-  } catch (error) {
-    console.error('Error al insertar:', error.message);
-  }
-};
-
-*/
