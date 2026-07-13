@@ -1,9 +1,22 @@
 import React from 'react';
 import classes from './button-delete.module.css';
+import { supabase } from '@/services/supabase-client';
 
 export const DeleteButton: React.FC = () => {
-  const handleClick = () => console.log('[Clicked]');
-  
+
+  const handleClick = async (e) => {
+    const productId =  e.target.closest('fieldset').dataset.id;
+    console.warn('[ID]', typeof productId)
+
+    try {
+      const {error} = await supabase.from('products').delete().eq('id', productId).select();
+      
+      if(error) throw error;
+    } catch (error) {
+      console.error('Error to insert:', error.message);
+    }
+  };
+
   return (
     <button
       className={classes.button_delete}
