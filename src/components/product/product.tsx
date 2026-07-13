@@ -32,6 +32,7 @@ export const Product: React.FC = (props) => {
         key={product.id}
         className={classes.fieldsetProduct}
         category_id={product.category_id}
+        data-id = {product.id}
       >
         <InputCheckbox
           dataSupaId={product.id}
